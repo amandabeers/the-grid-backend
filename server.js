@@ -35,7 +35,9 @@ app.use(bodyParser.urlencoded({
 
 const port = process.env.PORT || 4743;
 
-app.get('/', (req, res) => {
+app.get('/', async(req, res) => {
+  const conferences = await knex('conference');
+  console.log('GET', conferences);
   res.send('Hello World!')
 });
 
