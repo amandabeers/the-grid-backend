@@ -1,5 +1,6 @@
 // Update with your config settings.
 require('dotenv').config();
+console.log('DATABASE_URL', process.env.DATABASE_URL)
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
@@ -50,10 +51,15 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: process.env.PGDATABASE_URL,
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 0,
-      max: 10
+      max: 10,
+      afterCreate: (conn, done) => {
+        console.log(process.env.DATABASE_URL);
+        console.log('Connection established');
+        done();
+      }
     },
     migrations: {
       directory: __dirname + '/database/migrations',
