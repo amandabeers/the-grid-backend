@@ -1,6 +1,5 @@
 // Update with your config settings.
 require('dotenv').config();
-console.log('DATABASE_URL', process.env.DATABASE_URL)
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
@@ -11,8 +10,7 @@ module.exports = {
     connection: {
       host: 'localhost',
       database: process.env.PGDATABASE,
-      user:     process.env.PGUSER,
-      password: process.env.PGPASSWORD,
+      user: process.env.PGUSER,
       port: process.env.PGPORT
     },
     pool: {
