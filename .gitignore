@@ -145,3 +145,11 @@ vite.config.ts.timestamp-*
 
 # claude
 /.claude/settings.local.json
+
+# Ignore SQLite database files
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
