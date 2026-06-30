@@ -1,147 +1,205 @@
 /**
+ * Reconciled to SPEC.md §5. Table/column names are plural snake_case; the
+ * `outcome` table is gone (outcome lives on `games.result`, per-pick
+ * correctness on `picks.is_correct`). Enumerated columns are plain text with
+ * CHECK constraints (`checkIn`) rather than Postgres native enums, since the
+ * database is `better-sqlite3`. ESPN id columns are unique-but-nullable so the
+ * current seed (which has no ESPN ids yet) can still insert.
+ *
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = async function(knex) {
-  await knex.schema
-    .createTable('conference', (table) => {
-      table.increments('id').primary(),
-      table.string('name').notNullable(),
-      table.string('abbrv').notNullable()
-    });
+exports.up = async function (knex) {
+  await knex.schema.createTable('users', (table) => {
+    table.increments('id').primary();
+    table.string('email').notNullable().unique();
+    table.string('username').notNullable().unique();
+    table.string('password_hash').notNullable();
+    table.string('role').notNullable().defaultTo('member').checkIn(['member', 'admin']);
+    table.timestamp('created_at').defaultTo(knex.fn.now());
+  });
 
-  await knex.schema
-    .createTable('division', (table) => {
-      table.increments('id').primary(),
-      table.string('name').notNullable(),
-      table.integer('conference_id').unsigned().notNullable();
-      table.foreign('conference_id')
-        .references('id')
-        .inTable('conference')
-        .onDelete('CASCADE');
-    });
-  
-  await knex.schema
-    .createTable('team', (table) => {
-      table.increments('id').primary(),
-      table.string('name').notNullable(),
-      table.string('place').notNullable(),
-      table.string('abbrv').notNullable(),
-      table.string('logo'),
-      table.integer('division_id').unsigned().notNullable();
-      table.foreign('division_id')
-        .references('id')
-        .inTable('division')
-        .onDelete('CASCADE');
-    });
+  await knex.schema.createTable('seasons', (table) => {
+    table.increments('id').primary();
+    table.integer('year').notNullable();
+    table.datetime('lock_at').nullable();
+    table
+      .string('status')
+      .notNullable()
+      .defaultTo('upcoming')
+      .checkIn(['upcoming', 'picks_open', 'locked', 'in_progress', 'completed']);
+    table.timestamp('created_at').defaultTo(knex.fn.now());
+  });
 
-  await knex.schema
-    .createTable('season', (table) => {
-      table.increments('id').primary(),
-      table.integer('startYear').notNullable()
-    });
+  await knex.schema.createTable('invites', (table) => {
+    table.increments('id').primary();
+    table.string('token').notNullable().unique();
+    table
+      .integer('season_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('seasons')
+      .onDelete('CASCADE');
+    table
+      .integer('created_by')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('users')
+      .onDelete('CASCADE');
+    table
+      .integer('used_by')
+      .unsigned()
+      .nullable()
+      .references('id')
+      .inTable('users')
+      .onDelete('SET NULL');
+    table.datetime('expires_at').nullable();
+    table.timestamp('created_at').defaultTo(knex.fn.now());
+  });
 
-  await knex.schema
-    .createTable('week', (table) => {
-      table.increments('id').primary(),
-      table.integer('weekNumber').notNullable(),
-      table.integer('season_id').unsigned().notNullable();
-      table.foreign('season_id')
-        .references('id')
-        .inTable('season')
-        .onDelete('CASCADE');
-    });
+  await knex.schema.createTable('conferences', (table) => {
+    table.increments('id').primary();
+    table.string('espn_conference_id').unique().nullable();
+    table.string('name').notNullable();
+    table.string('abbreviation').notNullable();
+    table.json('metadata').nullable();
+  });
 
-  await knex.schema
-    .createTable('game', (table) => {
-      table.increments('id').primary(),
-      table.date('date').notNullable(),
-      table.time('time').notNullable(), 
-      table.string('location').notNullable(),
-      table.integer('homeScore'),
-      table.integer('awayScore'),
-      table.boolean('isOver').defaultTo(false),
-      table.integer('week_id').unsigned().notNullable();
-      table.foreign('week_id')
-        .references('id')
-        .inTable('week')
-        .onDelete('CASCADE');
-      table.integer('homeTeam_id').unsigned().notNullable();
-      table.foreign('homeTeam_id')
-        .references('id')
-        .inTable('team')
-        .onDelete('CASCADE');
-      table.integer('awayTeam_id').unsigned().notNullable();
-      table.foreign('awayTeam_id')
-        .references('id')
-        .inTable('team')
-        .onDelete('CASCADE');
-    });
-  
-  await knex.schema
-    .createTable('outcome', (table) => {
-      table.increments('id').primary(),
-      table.enu('result', ['W', 'L', 'T'], {
-        useNative: true,
-        enumName: 'outcome_type'
-      }),
-      table.integer('team_id').unsigned().notNullable();
-      table.foreign('team_id')
-        .references('id')
-        .inTable('team')
-        .onDelete('CASCADE');
-      table.integer('game_id').unsigned().notNullable();
-      table.foreign('game_id')
-        .references('id')
-        .inTable('game')
-        .onDelete('CASCADE');
-    });
+  await knex.schema.createTable('divisions', (table) => {
+    table.increments('id').primary();
+    table
+      .integer('conference_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('conferences')
+      .onDelete('CASCADE');
+    table.string('name').notNullable();
+    table.string('abbreviation').nullable();
+  });
 
-  await knex.schema
-    .createTable('user', (table) => {
-      table.increments('id').primary(),
-      table.string('username').notNullable(),
-      table.string('password').notNullable(),
-      table.string('timeZone').notNullable().defaultTo('EST')
-    });
+  await knex.schema.createTable('teams', (table) => {
+    table.increments('id').primary();
+    table.string('espn_team_id').unique().nullable();
+    table
+      .integer('division_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('divisions')
+      .onDelete('CASCADE');
+    table.string('name').notNullable();
+    table.string('location').nullable();
+    table.string('abbreviation').notNullable();
+    table.string('logo_url').nullable();
+    table.json('metadata').nullable();
+  });
 
-  await knex.schema
-    .createTable('pick', (table) => {
-      table.increments('id').primary(),
-      table.boolean('isCorrect'),
-      table.boolean('isTie'),
-      table.integer('game_id').unsigned().notNullable();
-      table.foreign('game_id')
-        .references('id')
-        .inTable('game')
-        .onDelete('CASCADE');
-      table.integer('team_id').unsigned().notNullable();
-      table.foreign('team_id')
-        .references('id')
-        .inTable('team')
-        .onDelete('CASCADE');
-      table.integer('user_id').unsigned().notNullable();
-      table.foreign('user_id')
-        .references('id')
-        .inTable('user')
-        .onDelete('CASCADE');
-    });
+  await knex.schema.createTable('weeks', (table) => {
+    table.increments('id').primary();
+    table
+      .integer('season_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('seasons')
+      .onDelete('CASCADE');
+    table.integer('week_number').notNullable();
+    table.integer('season_type').notNullable().defaultTo(2);
+  });
+
+  await knex.schema.createTable('games', (table) => {
+    table.increments('id').primary();
+    table
+      .integer('season_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('seasons')
+      .onDelete('CASCADE');
+    table
+      .integer('week_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('weeks')
+      .onDelete('CASCADE');
+    table.string('espn_event_id').unique().nullable();
+    table
+      .integer('home_team_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('teams')
+      .onDelete('CASCADE');
+    table
+      .integer('away_team_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('teams')
+      .onDelete('CASCADE');
+    table.datetime('kickoff_at').nullable();
+    table.datetime('start_time_et').nullable();
+    table.string('location').nullable();
+    table
+      .string('status')
+      .notNullable()
+      .defaultTo('scheduled')
+      .checkIn(['scheduled', 'in_progress', 'final']);
+    table.integer('home_score').nullable();
+    table.integer('away_score').nullable();
+    table.string('result').nullable().checkIn(['home_win', 'away_win', 'tie']);
+    table.json('raw_data').nullable();
+    table.timestamp('updated_at').defaultTo(knex.fn.now());
+  });
+
+  await knex.schema.createTable('picks', (table) => {
+    table.increments('id').primary();
+    table
+      .integer('user_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('users')
+      .onDelete('CASCADE');
+    table
+      .integer('game_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('games')
+      .onDelete('CASCADE');
+    table
+      .integer('picked_team_id')
+      .unsigned()
+      .nullable()
+      .references('id')
+      .inTable('teams')
+      .onDelete('CASCADE');
+    table.string('pick_type').notNullable().checkIn(['team_win', 'tie']);
+    table.boolean('is_correct').nullable();
+    table.timestamp('created_at').defaultTo(knex.fn.now());
+    table.timestamp('updated_at').defaultTo(knex.fn.now());
+    table.unique(['user_id', 'game_id']);
+  });
 };
 
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function(knex) {
+exports.down = function (knex) {
   return knex.schema
-  .dropTable('pick')
-  .dropTable('user')
-  .dropTable('outcome')
-  .raw('DROP TYPE IF EXISTS outcome_type')
-  .dropTable('game')
-  .dropTable('week')
-  .dropTable('season')
-  .dropTable('team')
-  .dropTable('division')
-  .dropTable('conference');
+    .dropTableIfExists('picks')
+    .dropTableIfExists('games')
+    .dropTableIfExists('weeks')
+    .dropTableIfExists('teams')
+    .dropTableIfExists('divisions')
+    .dropTableIfExists('conferences')
+    .dropTableIfExists('invites')
+    .dropTableIfExists('seasons')
+    .dropTableIfExists('users');
 };
