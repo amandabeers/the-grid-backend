@@ -72,7 +72,7 @@ This repository and spec cover **the backend** — a REST API, the data layer, a
 
 ## 5. Data Model
 
-Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denormalized data (e.g. raw ESPN payload snapshots) per your stated preference for JSON storage; core relational fields remain normalized columns for query performance.
+Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denormalized data (e.g. raw ESPN payload snapshots) per your stated preference for JSON storage; core relational fields remain normalized columns for query performance. Enumerated text columns (`users.role`, `seasons.status`, `games.status`, `games.result`, `picks.pick_type`) are enforced with SQLite `CHECK` constraints in the migration rather than native enums.
 
 ### 5.1 `users`
 | Column | Type | Notes |
@@ -81,7 +81,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | email | text, unique | |
 | username | text, unique | |
 | password_hash | text | bcrypt/argon2 |
-| role | text | `member` \| `admin` |
+| role | text | `member` \| `admin`; defaults to `member` |
 | created_at | datetime | |
 
 ### 5.2 `invites`
@@ -100,8 +100,8 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 |---|---|---|
 | id | integer PK | |
 | year | integer | e.g. 2026 |
-| lock_at | datetime | kickoff of first game; picks lock at this instant |
-| status | text | `upcoming` \| `picks_open` \| `locked` \| `in_progress` \| `completed` |
+| lock_at | datetime, nullable | kickoff of first game; picks lock at this instant. Null until the schedule import reveals the first kickoff |
+| status | text | `upcoming` \| `picks_open` \| `locked` \| `in_progress` \| `completed`; defaults to `upcoming` |
 | created_at | datetime | |
 
 ### 5.4 `conferences`
@@ -125,9 +125,10 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | Column | Type | Notes |
 |---|---|---|
 | id | integer PK | |
-| espn_team_id | text, unique | ESPN's team identifier |
+| espn_team_id | text, unique, nullable | ESPN's team identifier; nullable until the ESPN import populates it |
 | division_id | integer FK → divisions.id | |
 | name | text | e.g. "Patriots" |
+| location | text, nullable | team city, e.g. "New England" |
 | abbreviation | text | e.g. "NE" |
 | logo_url | text, nullable | |
 | metadata | JSON, nullable | raw extra fields from ESPN |
@@ -138,7 +139,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | id | integer PK | |
 | season_id | integer FK → seasons.id | |
 | week_number | integer | e.g. 1–18 for the regular season |
-| season_type | integer | 1=preseason, 2=regular, 3=postseason (ESPN convention); v1 imports regular season only (§9) |
+| season_type | integer | 1=preseason, 2=regular, 3=postseason (ESPN convention); defaults to `2`; v1 imports regular season only (§9) |
 
 ### 5.8 `games`
 | Column | Type | Notes |
@@ -146,18 +147,20 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | id | integer PK | |
 | season_id | integer FK | denormalized convenience; also reachable via `weeks.season_id` |
 | week_id | integer FK → weeks.id | the week (and thus season/season_type) this game belongs to |
-| espn_event_id | text, unique | ESPN's event/game ID |
+| espn_event_id | text, unique, nullable | ESPN's event/game ID; nullable until the ESPN import populates it |
 | home_team_id | integer FK → teams.id | |
 | away_team_id | integer FK → teams.id | |
-| kickoff_at | datetime | |
-| status | text | `scheduled` \| `in_progress` \| `final` |
+| kickoff_at | datetime | canonical UTC kickoff |
+| start_time_et | datetime, nullable | ET-local kickoff, for display |
+| location | text, nullable | stadium/venue |
+| status | text | `scheduled` \| `in_progress` \| `final`; defaults to `scheduled` |
 | home_score | integer, nullable | populated once final/live |
 | away_score | integer, nullable | |
 | result | text, nullable | `home_win` \| `away_win` \| `tie`, derived once final |
 | raw_data | JSON, nullable | full ESPN payload snapshot for the game, for debugging/audit |
 | updated_at | datetime | |
 
-> **No separate `outcome` table.** A game's outcome is stored directly on `games.result` (`home_win` \| `away_win` \| `tie`), and per-pick correctness on `picks.is_correct` (§5.9), both computed at score time (§6.3). This supersedes the `outcome` table in the current migration, which will be dropped when the migration is reconciled to this spec.
+> **No separate `outcome` table.** A game's outcome is stored directly on `games.result` (`home_win` \| `away_win` \| `tie`), and per-pick correctness on `picks.is_correct` (§5.9), both computed at score time (§6.3). The migration has been reconciled to this spec and the `outcome` table dropped.
 
 ### 5.9 `picks`
 | Column | Type | Notes |
@@ -166,7 +169,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | user_id | integer FK | |
 | game_id | integer FK | |
 | picked_team_id | integer FK → teams.id, nullable | null when pick is "Tie" |
-| pick_type | text | `team_win` \| `tie` |
+| pick_type | text | `team_win` \| `tie` (CHECK-constrained) |
 | is_correct | boolean, nullable | computed once `games.result` is known |
 | created_at | datetime | |
 | updated_at | datetime | |
@@ -174,7 +177,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 Unique constraint on `(user_id, game_id)` — one pick per user per game.
 
 ### 5.10 `grids` (optional convenience/derived table, or computed view)
-Rather than a separate mutable table, a Grid is best modeled as a **derived view**: "all picks by user X for season Y," with completeness computed on read (see §6.2). This avoids data duplication and sync bugs. If a persisted summary is wanted for fast comparison/leaderboard pages, add:
+Rather than a separate mutable table, a Grid is best modeled as a **derived view**: "all picks by user X for season Y," with completeness computed on read (see §6.2). This avoids data duplication and sync bugs. **The initial migration intentionally does not create this table** — a Grid is currently a derived view. If a persisted summary is later wanted for fast comparison/leaderboard pages, add:
 
 | Column | Type | Notes |
 |---|---|---|
