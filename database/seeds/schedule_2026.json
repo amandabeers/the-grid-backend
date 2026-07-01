@@ -1,0 +1,2722 @@
+[
+  {
+    "week": 1,
+    "date": "2026-09-09",
+    "time": "20:20:00",
+    "home": "SEA",
+    "away": "NE",
+    "location": "Lumen Field, Seattle, WA, USA",
+    "startTimeUTC": "2026-09-10T00:20Z",
+    "startTimeET": "2026-09-09T20:20:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-10",
+    "time": "20:35:00",
+    "home": "LAR",
+    "away": "SF",
+    "location": "Melbourne Cricket Ground, Melbourne, VIC, Australia",
+    "startTimeUTC": "2026-09-11T00:35Z",
+    "startTimeET": "2026-09-10T20:35:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "13:00:00",
+    "home": "CIN",
+    "away": "TB",
+    "location": "Paycor Stadium, Cincinnati, OH, USA",
+    "startTimeUTC": "2026-09-13T17:00Z",
+    "startTimeET": "2026-09-13T13:00:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "13:00:00",
+    "home": "DET",
+    "away": "NO",
+    "location": "Ford Field, Detroit, MI, USA",
+    "startTimeUTC": "2026-09-13T17:00Z",
+    "startTimeET": "2026-09-13T13:00:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "13:00:00",
+    "home": "TEN",
+    "away": "NYJ",
+    "location": "Nissan Stadium, Nashville, TN, USA",
+    "startTimeUTC": "2026-09-13T17:00Z",
+    "startTimeET": "2026-09-13T13:00:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "13:00:00",
+    "home": "IND",
+    "away": "BAL",
+    "location": "Lucas Oil Stadium, Indianapolis, IN, USA",
+    "startTimeUTC": "2026-09-13T17:00Z",
+    "startTimeET": "2026-09-13T13:00:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "13:00:00",
+    "home": "PIT",
+    "away": "ATL",
+    "location": "Acrisure Stadium, Pittsburgh, PA, USA",
+    "startTimeUTC": "2026-09-13T17:00Z",
+    "startTimeET": "2026-09-13T13:00:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "13:00:00",
+    "home": "CAR",
+    "away": "CHI",
+    "location": "Bank of America Stadium, Charlotte, NC, USA",
+    "startTimeUTC": "2026-09-13T17:00Z",
+    "startTimeET": "2026-09-13T13:00:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "13:00:00",
+    "home": "JAX",
+    "away": "CLE",
+    "location": "EverBank Stadium, Jacksonville, FL, USA",
+    "startTimeUTC": "2026-09-13T17:00Z",
+    "startTimeET": "2026-09-13T13:00:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "13:00:00",
+    "home": "HOU",
+    "away": "BUF",
+    "location": "NRG Stadium, Houston, TX, USA",
+    "startTimeUTC": "2026-09-13T17:00Z",
+    "startTimeET": "2026-09-13T13:00:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "16:25:00",
+    "home": "LV",
+    "away": "MIA",
+    "location": "Allegiant Stadium, Las Vegas, NV, USA",
+    "startTimeUTC": "2026-09-13T20:25Z",
+    "startTimeET": "2026-09-13T16:25:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "16:25:00",
+    "home": "MIN",
+    "away": "GB",
+    "location": "U.S. Bank Stadium, Minneapolis, MN, USA",
+    "startTimeUTC": "2026-09-13T20:25Z",
+    "startTimeET": "2026-09-13T16:25:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "16:25:00",
+    "home": "PHI",
+    "away": "WSH",
+    "location": "Lincoln Financial Field, Philadelphia, PA, USA",
+    "startTimeUTC": "2026-09-13T20:25Z",
+    "startTimeET": "2026-09-13T16:25:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "16:25:00",
+    "home": "LAC",
+    "away": "ARI",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-09-13T20:25Z",
+    "startTimeET": "2026-09-13T16:25:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-13",
+    "time": "20:20:00",
+    "home": "NYG",
+    "away": "DAL",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-09-14T00:20Z",
+    "startTimeET": "2026-09-13T20:20:00"
+  },
+  {
+    "week": 1,
+    "date": "2026-09-14",
+    "time": "20:15:00",
+    "home": "KC",
+    "away": "DEN",
+    "location": "GEHA Field at Arrowhead Stadium, Kansas City, MO, USA",
+    "startTimeUTC": "2026-09-15T00:15Z",
+    "startTimeET": "2026-09-14T20:15:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-17",
+    "time": "20:15:00",
+    "home": "BUF",
+    "away": "DET",
+    "location": "Highmark Stadium, Orchard Park, NY, USA",
+    "startTimeUTC": "2026-09-18T00:15Z",
+    "startTimeET": "2026-09-17T20:15:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "13:00:00",
+    "home": "ATL",
+    "away": "CAR",
+    "location": "Mercedes-Benz Stadium, Atlanta, GA, USA",
+    "startTimeUTC": "2026-09-20T17:00Z",
+    "startTimeET": "2026-09-20T13:00:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "13:00:00",
+    "home": "CHI",
+    "away": "MIN",
+    "location": "Soldier Field, Chicago, IL, USA",
+    "startTimeUTC": "2026-09-20T17:00Z",
+    "startTimeET": "2026-09-20T13:00:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "13:00:00",
+    "home": "TEN",
+    "away": "PHI",
+    "location": "Nissan Stadium, Nashville, TN, USA",
+    "startTimeUTC": "2026-09-20T17:00Z",
+    "startTimeET": "2026-09-20T13:00:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "13:00:00",
+    "home": "NE",
+    "away": "PIT",
+    "location": "Gillette Stadium, Foxborough, MA, USA",
+    "startTimeUTC": "2026-09-20T17:00Z",
+    "startTimeET": "2026-09-20T13:00:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "13:00:00",
+    "home": "NYJ",
+    "away": "GB",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-09-20T17:00Z",
+    "startTimeET": "2026-09-20T13:00:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "13:00:00",
+    "home": "TB",
+    "away": "CLE",
+    "location": "Raymond James Stadium, Tampa, FL, USA",
+    "startTimeUTC": "2026-09-20T17:00Z",
+    "startTimeET": "2026-09-20T13:00:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "13:00:00",
+    "home": "BAL",
+    "away": "NO",
+    "location": "M&T Bank Stadium, Baltimore, MD, USA",
+    "startTimeUTC": "2026-09-20T17:00Z",
+    "startTimeET": "2026-09-20T13:00:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "13:00:00",
+    "home": "HOU",
+    "away": "CIN",
+    "location": "NRG Stadium, Houston, TX, USA",
+    "startTimeUTC": "2026-09-20T17:00Z",
+    "startTimeET": "2026-09-20T13:00:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "16:05:00",
+    "home": "DEN",
+    "away": "JAX",
+    "location": "Empower Field at Mile High, Denver, CO, USA",
+    "startTimeUTC": "2026-09-20T20:05Z",
+    "startTimeET": "2026-09-20T16:05:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "16:05:00",
+    "home": "LAC",
+    "away": "LV",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-09-20T20:05Z",
+    "startTimeET": "2026-09-20T16:05:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "16:25:00",
+    "home": "DAL",
+    "away": "WSH",
+    "location": "AT&T Stadium, Arlington, TX, USA",
+    "startTimeUTC": "2026-09-20T20:25Z",
+    "startTimeET": "2026-09-20T16:25:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "16:25:00",
+    "home": "ARI",
+    "away": "SEA",
+    "location": "State Farm Stadium, Glendale, AZ, USA",
+    "startTimeUTC": "2026-09-20T20:25Z",
+    "startTimeET": "2026-09-20T16:25:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "16:25:00",
+    "home": "SF",
+    "away": "MIA",
+    "location": "Levi's Stadium, Santa Clara, CA, USA",
+    "startTimeUTC": "2026-09-20T20:25Z",
+    "startTimeET": "2026-09-20T16:25:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-20",
+    "time": "20:20:00",
+    "home": "KC",
+    "away": "IND",
+    "location": "GEHA Field at Arrowhead Stadium, Kansas City, MO, USA",
+    "startTimeUTC": "2026-09-21T00:20Z",
+    "startTimeET": "2026-09-20T20:20:00"
+  },
+  {
+    "week": 2,
+    "date": "2026-09-21",
+    "time": "20:15:00",
+    "home": "LAR",
+    "away": "NYG",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-09-22T00:15Z",
+    "startTimeET": "2026-09-21T20:15:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-24",
+    "time": "20:15:00",
+    "home": "GB",
+    "away": "ATL",
+    "location": "Lambeau Field, Green Bay, WI, USA",
+    "startTimeUTC": "2026-09-25T00:15Z",
+    "startTimeET": "2026-09-24T20:15:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "13:00:00",
+    "home": "BUF",
+    "away": "LAC",
+    "location": "Highmark Stadium, Orchard Park, NY, USA",
+    "startTimeUTC": "2026-09-27T17:00Z",
+    "startTimeET": "2026-09-27T13:00:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "13:00:00",
+    "home": "CLE",
+    "away": "CAR",
+    "location": "Huntington Bank Field, Cleveland, OH, USA",
+    "startTimeUTC": "2026-09-27T17:00Z",
+    "startTimeET": "2026-09-27T13:00:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "13:00:00",
+    "home": "DET",
+    "away": "NYJ",
+    "location": "Ford Field, Detroit, MI, USA",
+    "startTimeUTC": "2026-09-27T17:00Z",
+    "startTimeET": "2026-09-27T13:00:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "13:00:00",
+    "home": "IND",
+    "away": "HOU",
+    "location": "Lucas Oil Stadium, Indianapolis, IN, USA",
+    "startTimeUTC": "2026-09-27T17:00Z",
+    "startTimeET": "2026-09-27T13:00:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "13:00:00",
+    "home": "MIA",
+    "away": "KC",
+    "location": "Hard Rock Stadium, Miami Gardens, FL, USA",
+    "startTimeUTC": "2026-09-27T17:00Z",
+    "startTimeET": "2026-09-27T13:00:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "13:00:00",
+    "home": "NYG",
+    "away": "TEN",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-09-27T17:00Z",
+    "startTimeET": "2026-09-27T13:00:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "13:00:00",
+    "home": "PIT",
+    "away": "CIN",
+    "location": "Acrisure Stadium, Pittsburgh, PA, USA",
+    "startTimeUTC": "2026-09-27T17:00Z",
+    "startTimeET": "2026-09-27T13:00:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "13:00:00",
+    "home": "WSH",
+    "away": "SEA",
+    "location": "Northwest Stadium, Landover, MD, USA",
+    "startTimeUTC": "2026-09-27T17:00Z",
+    "startTimeET": "2026-09-27T13:00:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "13:00:00",
+    "home": "JAX",
+    "away": "NE",
+    "location": "EverBank Stadium, Jacksonville, FL, USA",
+    "startTimeUTC": "2026-09-27T17:00Z",
+    "startTimeET": "2026-09-27T13:00:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "16:05:00",
+    "home": "SF",
+    "away": "ARI",
+    "location": "Levi's Stadium, Santa Clara, CA, USA",
+    "startTimeUTC": "2026-09-27T20:05Z",
+    "startTimeET": "2026-09-27T16:05:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "16:05:00",
+    "home": "TB",
+    "away": "MIN",
+    "location": "Raymond James Stadium, Tampa, FL, USA",
+    "startTimeUTC": "2026-09-27T20:05Z",
+    "startTimeET": "2026-09-27T16:05:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "16:25:00",
+    "home": "DAL",
+    "away": "BAL",
+    "location": "Maracanã Stadium, Rio De Janeiro, Brazil",
+    "startTimeUTC": "2026-09-27T20:25Z",
+    "startTimeET": "2026-09-27T16:25:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "16:25:00",
+    "home": "NO",
+    "away": "LV",
+    "location": "Caesars Superdome, New Orleans, LA, USA",
+    "startTimeUTC": "2026-09-27T20:25Z",
+    "startTimeET": "2026-09-27T16:25:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-27",
+    "time": "20:20:00",
+    "home": "DEN",
+    "away": "LAR",
+    "location": "Empower Field at Mile High, Denver, CO, USA",
+    "startTimeUTC": "2026-09-28T00:20Z",
+    "startTimeET": "2026-09-27T20:20:00"
+  },
+  {
+    "week": 3,
+    "date": "2026-09-28",
+    "time": "20:15:00",
+    "home": "CHI",
+    "away": "PHI",
+    "location": "Soldier Field, Chicago, IL, USA",
+    "startTimeUTC": "2026-09-29T00:15Z",
+    "startTimeET": "2026-09-28T20:15:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-01",
+    "time": "20:15:00",
+    "home": "CLE",
+    "away": "PIT",
+    "location": "Huntington Bank Field, Cleveland, OH, USA",
+    "startTimeUTC": "2026-10-02T00:15Z",
+    "startTimeET": "2026-10-01T20:15:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "09:30:00",
+    "home": "WSH",
+    "away": "IND",
+    "location": "Tottenham Hotspur Stadium, London, England",
+    "startTimeUTC": "2026-10-04T13:30Z",
+    "startTimeET": "2026-10-04T09:30:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "13:00:00",
+    "home": "BUF",
+    "away": "NE",
+    "location": "Highmark Stadium, Orchard Park, NY, USA",
+    "startTimeUTC": "2026-10-04T17:00Z",
+    "startTimeET": "2026-10-04T13:00:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "13:00:00",
+    "home": "CHI",
+    "away": "NYJ",
+    "location": "Soldier Field, Chicago, IL, USA",
+    "startTimeUTC": "2026-10-04T17:00Z",
+    "startTimeET": "2026-10-04T13:00:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "13:00:00",
+    "home": "CIN",
+    "away": "JAX",
+    "location": "Paycor Stadium, Cincinnati, OH, USA",
+    "startTimeUTC": "2026-10-04T17:00Z",
+    "startTimeET": "2026-10-04T13:00:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "13:00:00",
+    "home": "NYG",
+    "away": "ARI",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-10-04T17:00Z",
+    "startTimeET": "2026-10-04T13:00:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "13:00:00",
+    "home": "PHI",
+    "away": "LAR",
+    "location": "Lincoln Financial Field, Philadelphia, PA, USA",
+    "startTimeUTC": "2026-10-04T17:00Z",
+    "startTimeET": "2026-10-04T13:00:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "13:00:00",
+    "home": "TB",
+    "away": "GB",
+    "location": "Raymond James Stadium, Tampa, FL, USA",
+    "startTimeUTC": "2026-10-04T17:00Z",
+    "startTimeET": "2026-10-04T13:00:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "13:00:00",
+    "home": "BAL",
+    "away": "TEN",
+    "location": "M&T Bank Stadium, Baltimore, MD, USA",
+    "startTimeUTC": "2026-10-04T17:00Z",
+    "startTimeET": "2026-10-04T13:00:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "13:00:00",
+    "home": "HOU",
+    "away": "DAL",
+    "location": "NRG Stadium, Houston, TX, USA",
+    "startTimeUTC": "2026-10-04T17:00Z",
+    "startTimeET": "2026-10-04T13:00:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "16:05:00",
+    "home": "MIN",
+    "away": "MIA",
+    "location": "U.S. Bank Stadium, Minneapolis, MN, USA",
+    "startTimeUTC": "2026-10-04T20:05Z",
+    "startTimeET": "2026-10-04T16:05:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "16:25:00",
+    "home": "LV",
+    "away": "KC",
+    "location": "Allegiant Stadium, Las Vegas, NV, USA",
+    "startTimeUTC": "2026-10-04T20:25Z",
+    "startTimeET": "2026-10-04T16:25:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "16:25:00",
+    "home": "SF",
+    "away": "DEN",
+    "location": "Levi's Stadium, Santa Clara, CA, USA",
+    "startTimeUTC": "2026-10-04T20:25Z",
+    "startTimeET": "2026-10-04T16:25:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "16:25:00",
+    "home": "SEA",
+    "away": "LAC",
+    "location": "Lumen Field, Seattle, WA, USA",
+    "startTimeUTC": "2026-10-04T20:25Z",
+    "startTimeET": "2026-10-04T16:25:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "time": "20:20:00",
+    "home": "CAR",
+    "away": "DET",
+    "location": "Bank of America Stadium, Charlotte, NC, USA",
+    "startTimeUTC": "2026-10-05T00:20Z",
+    "startTimeET": "2026-10-04T20:20:00"
+  },
+  {
+    "week": 4,
+    "date": "2026-10-05",
+    "time": "20:15:00",
+    "home": "NO",
+    "away": "ATL",
+    "location": "Caesars Superdome, New Orleans, LA, USA",
+    "startTimeUTC": "2026-10-06T00:15Z",
+    "startTimeET": "2026-10-05T20:15:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-08",
+    "time": "20:15:00",
+    "home": "DAL",
+    "away": "TB",
+    "location": "AT&T Stadium, Arlington, TX, USA",
+    "startTimeUTC": "2026-10-09T00:15Z",
+    "startTimeET": "2026-10-08T20:15:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "09:30:00",
+    "home": "JAX",
+    "away": "PHI",
+    "location": "Tottenham Hotspur Stadium, London, England",
+    "startTimeUTC": "2026-10-11T13:30Z",
+    "startTimeET": "2026-10-11T09:30:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "13:00:00",
+    "home": "TEN",
+    "away": "HOU",
+    "location": "Nissan Stadium, Nashville, TN, USA",
+    "startTimeUTC": "2026-10-11T17:00Z",
+    "startTimeET": "2026-10-11T13:00:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "13:00:00",
+    "home": "MIA",
+    "away": "CIN",
+    "location": "Hard Rock Stadium, Miami Gardens, FL, USA",
+    "startTimeUTC": "2026-10-11T17:00Z",
+    "startTimeET": "2026-10-11T13:00:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "13:00:00",
+    "home": "NE",
+    "away": "LV",
+    "location": "Gillette Stadium, Foxborough, MA, USA",
+    "startTimeUTC": "2026-10-11T17:00Z",
+    "startTimeET": "2026-10-11T13:00:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "13:00:00",
+    "home": "NO",
+    "away": "MIN",
+    "location": "Caesars Superdome, New Orleans, LA, USA",
+    "startTimeUTC": "2026-10-11T17:00Z",
+    "startTimeET": "2026-10-11T13:00:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "13:00:00",
+    "home": "NYJ",
+    "away": "CLE",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-10-11T17:00Z",
+    "startTimeET": "2026-10-11T13:00:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "13:00:00",
+    "home": "PIT",
+    "away": "IND",
+    "location": "Acrisure Stadium, Pittsburgh, PA, USA",
+    "startTimeUTC": "2026-10-11T17:00Z",
+    "startTimeET": "2026-10-11T13:00:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "13:00:00",
+    "home": "WSH",
+    "away": "NYG",
+    "location": "Northwest Stadium, Landover, MD, USA",
+    "startTimeUTC": "2026-10-11T17:00Z",
+    "startTimeET": "2026-10-11T13:00:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "16:05:00",
+    "home": "LAC",
+    "away": "DEN",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-10-11T20:05Z",
+    "startTimeET": "2026-10-11T16:05:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "16:25:00",
+    "home": "GB",
+    "away": "CHI",
+    "location": "Lambeau Field, Green Bay, WI, USA",
+    "startTimeUTC": "2026-10-11T20:25Z",
+    "startTimeET": "2026-10-11T16:25:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "16:25:00",
+    "home": "ARI",
+    "away": "DET",
+    "location": "State Farm Stadium, Glendale, AZ, USA",
+    "startTimeUTC": "2026-10-11T20:25Z",
+    "startTimeET": "2026-10-11T16:25:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "16:25:00",
+    "home": "SEA",
+    "away": "SF",
+    "location": "Lumen Field, Seattle, WA, USA",
+    "startTimeUTC": "2026-10-11T20:25Z",
+    "startTimeET": "2026-10-11T16:25:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-11",
+    "time": "20:20:00",
+    "home": "ATL",
+    "away": "BAL",
+    "location": "Mercedes-Benz Stadium, Atlanta, GA, USA",
+    "startTimeUTC": "2026-10-12T00:20Z",
+    "startTimeET": "2026-10-11T20:20:00"
+  },
+  {
+    "week": 5,
+    "date": "2026-10-12",
+    "time": "20:15:00",
+    "home": "LAR",
+    "away": "BUF",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-10-13T00:15Z",
+    "startTimeET": "2026-10-12T20:15:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-15",
+    "time": "20:15:00",
+    "home": "DEN",
+    "away": "SEA",
+    "location": "Empower Field at Mile High, Denver, CO, USA",
+    "startTimeUTC": "2026-10-16T00:15Z",
+    "startTimeET": "2026-10-15T20:15:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "09:30:00",
+    "home": "JAX",
+    "away": "HOU",
+    "location": "Wembley Stadium, London, England",
+    "startTimeUTC": "2026-10-18T13:30Z",
+    "startTimeET": "2026-10-18T09:30:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "13:00:00",
+    "home": "ATL",
+    "away": "CHI",
+    "location": "Mercedes-Benz Stadium, Atlanta, GA, USA",
+    "startTimeUTC": "2026-10-18T17:00Z",
+    "startTimeET": "2026-10-18T13:00:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "13:00:00",
+    "home": "CLE",
+    "away": "BAL",
+    "location": "Huntington Bank Field, Cleveland, OH, USA",
+    "startTimeUTC": "2026-10-18T17:00Z",
+    "startTimeET": "2026-10-18T13:00:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "13:00:00",
+    "home": "IND",
+    "away": "TEN",
+    "location": "Lucas Oil Stadium, Indianapolis, IN, USA",
+    "startTimeUTC": "2026-10-18T17:00Z",
+    "startTimeET": "2026-10-18T13:00:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "13:00:00",
+    "home": "NE",
+    "away": "NYJ",
+    "location": "Gillette Stadium, Foxborough, MA, USA",
+    "startTimeUTC": "2026-10-18T17:00Z",
+    "startTimeET": "2026-10-18T13:00:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "13:00:00",
+    "home": "NYG",
+    "away": "NO",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-10-18T17:00Z",
+    "startTimeET": "2026-10-18T13:00:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "13:00:00",
+    "home": "PHI",
+    "away": "CAR",
+    "location": "Lincoln Financial Field, Philadelphia, PA, USA",
+    "startTimeUTC": "2026-10-18T17:00Z",
+    "startTimeET": "2026-10-18T13:00:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "13:00:00",
+    "home": "TB",
+    "away": "PIT",
+    "location": "Raymond James Stadium, Tampa, FL, USA",
+    "startTimeUTC": "2026-10-18T17:00Z",
+    "startTimeET": "2026-10-18T13:00:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "16:05:00",
+    "home": "LAR",
+    "away": "ARI",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-10-18T20:05Z",
+    "startTimeET": "2026-10-18T16:05:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "16:25:00",
+    "home": "KC",
+    "away": "LAC",
+    "location": "GEHA Field at Arrowhead Stadium, Kansas City, MO, USA",
+    "startTimeUTC": "2026-10-18T20:25Z",
+    "startTimeET": "2026-10-18T16:25:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "16:25:00",
+    "home": "LV",
+    "away": "BUF",
+    "location": "Allegiant Stadium, Las Vegas, NV, USA",
+    "startTimeUTC": "2026-10-18T20:25Z",
+    "startTimeET": "2026-10-18T16:25:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-18",
+    "time": "20:20:00",
+    "home": "GB",
+    "away": "DAL",
+    "location": "Lambeau Field, Green Bay, WI, USA",
+    "startTimeUTC": "2026-10-19T00:20Z",
+    "startTimeET": "2026-10-18T20:20:00"
+  },
+  {
+    "week": 6,
+    "date": "2026-10-19",
+    "time": "20:15:00",
+    "home": "SF",
+    "away": "WSH",
+    "location": "Levi's Stadium, Santa Clara, CA, USA",
+    "startTimeUTC": "2026-10-20T00:15Z",
+    "startTimeET": "2026-10-19T20:15:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-22",
+    "time": "20:15:00",
+    "home": "CHI",
+    "away": "NE",
+    "location": "Soldier Field, Chicago, IL, USA",
+    "startTimeUTC": "2026-10-23T00:15Z",
+    "startTimeET": "2026-10-22T20:15:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "09:30:00",
+    "home": "NO",
+    "away": "PIT",
+    "location": "Stade de France, Saint-Denis, France",
+    "startTimeUTC": "2026-10-25T13:30Z",
+    "startTimeET": "2026-10-25T09:30:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "13:00:00",
+    "home": "ATL",
+    "away": "SF",
+    "location": "Mercedes-Benz Stadium, Atlanta, GA, USA",
+    "startTimeUTC": "2026-10-25T17:00Z",
+    "startTimeET": "2026-10-25T13:00:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "13:00:00",
+    "home": "TEN",
+    "away": "CLE",
+    "location": "Nissan Stadium, Nashville, TN, USA",
+    "startTimeUTC": "2026-10-25T17:00Z",
+    "startTimeET": "2026-10-25T13:00:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "13:00:00",
+    "home": "MIN",
+    "away": "IND",
+    "location": "U.S. Bank Stadium, Minneapolis, MN, USA",
+    "startTimeUTC": "2026-10-25T17:00Z",
+    "startTimeET": "2026-10-25T13:00:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "13:00:00",
+    "home": "NYJ",
+    "away": "MIA",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-10-25T17:00Z",
+    "startTimeET": "2026-10-25T13:00:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "13:00:00",
+    "home": "CAR",
+    "away": "TB",
+    "location": "Bank of America Stadium, Charlotte, NC, USA",
+    "startTimeUTC": "2026-10-25T17:00Z",
+    "startTimeET": "2026-10-25T13:00:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "13:00:00",
+    "home": "BAL",
+    "away": "CIN",
+    "location": "M&T Bank Stadium, Baltimore, MD, USA",
+    "startTimeUTC": "2026-10-25T17:00Z",
+    "startTimeET": "2026-10-25T13:00:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "13:00:00",
+    "home": "HOU",
+    "away": "NYG",
+    "location": "NRG Stadium, Houston, TX, USA",
+    "startTimeUTC": "2026-10-25T17:00Z",
+    "startTimeET": "2026-10-25T13:00:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "16:05:00",
+    "home": "ARI",
+    "away": "DEN",
+    "location": "State Farm Stadium, Glendale, AZ, USA",
+    "startTimeUTC": "2026-10-25T20:05Z",
+    "startTimeET": "2026-10-25T16:05:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "16:25:00",
+    "home": "DET",
+    "away": "GB",
+    "location": "Ford Field, Detroit, MI, USA",
+    "startTimeUTC": "2026-10-25T20:25Z",
+    "startTimeET": "2026-10-25T16:25:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "16:25:00",
+    "home": "LV",
+    "away": "LAR",
+    "location": "Allegiant Stadium, Las Vegas, NV, USA",
+    "startTimeUTC": "2026-10-25T20:25Z",
+    "startTimeET": "2026-10-25T16:25:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "time": "20:20:00",
+    "home": "SEA",
+    "away": "KC",
+    "location": "Lumen Field, Seattle, WA, USA",
+    "startTimeUTC": "2026-10-26T00:20Z",
+    "startTimeET": "2026-10-25T20:20:00"
+  },
+  {
+    "week": 7,
+    "date": "2026-10-26",
+    "time": "20:15:00",
+    "home": "PHI",
+    "away": "DAL",
+    "location": "Lincoln Financial Field, Philadelphia, PA, USA",
+    "startTimeUTC": "2026-10-27T00:15Z",
+    "startTimeET": "2026-10-26T20:15:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-10-29",
+    "time": "20:15:00",
+    "home": "GB",
+    "away": "CAR",
+    "location": "Lambeau Field, Green Bay, WI, USA",
+    "startTimeUTC": "2026-10-30T00:15Z",
+    "startTimeET": "2026-10-29T20:15:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "13:00:00",
+    "home": "BUF",
+    "away": "BAL",
+    "location": "Highmark Stadium, Orchard Park, NY, USA",
+    "startTimeUTC": "2026-11-01T18:00Z",
+    "startTimeET": "2026-11-01T13:00:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "13:00:00",
+    "home": "CIN",
+    "away": "TEN",
+    "location": "Paycor Stadium, Cincinnati, OH, USA",
+    "startTimeUTC": "2026-11-01T18:00Z",
+    "startTimeET": "2026-11-01T13:00:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "13:00:00",
+    "home": "DAL",
+    "away": "ARI",
+    "location": "AT&T Stadium, Arlington, TX, USA",
+    "startTimeUTC": "2026-11-01T18:00Z",
+    "startTimeET": "2026-11-01T13:00:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "13:00:00",
+    "home": "DET",
+    "away": "MIN",
+    "location": "Ford Field, Detroit, MI, USA",
+    "startTimeUTC": "2026-11-01T18:00Z",
+    "startTimeET": "2026-11-01T13:00:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "13:00:00",
+    "home": "NYJ",
+    "away": "LV",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-11-01T18:00Z",
+    "startTimeET": "2026-11-01T13:00:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "13:00:00",
+    "home": "PIT",
+    "away": "CLE",
+    "location": "Acrisure Stadium, Pittsburgh, PA, USA",
+    "startTimeUTC": "2026-11-01T18:00Z",
+    "startTimeET": "2026-11-01T13:00:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "13:00:00",
+    "home": "TB",
+    "away": "ATL",
+    "location": "Raymond James Stadium, Tampa, FL, USA",
+    "startTimeUTC": "2026-11-01T18:00Z",
+    "startTimeET": "2026-11-01T13:00:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "13:00:00",
+    "home": "JAX",
+    "away": "IND",
+    "location": "EverBank Stadium, Jacksonville, FL, USA",
+    "startTimeUTC": "2026-11-01T18:00Z",
+    "startTimeET": "2026-11-01T13:00:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "16:05:00",
+    "home": "LAR",
+    "away": "LAC",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-11-01T21:05Z",
+    "startTimeET": "2026-11-01T16:05:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "16:25:00",
+    "home": "DEN",
+    "away": "KC",
+    "location": "Empower Field at Mile High, Denver, CO, USA",
+    "startTimeUTC": "2026-11-01T21:25Z",
+    "startTimeET": "2026-11-01T16:25:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "16:25:00",
+    "home": "MIA",
+    "away": "NE",
+    "location": "Hard Rock Stadium, Miami Gardens, FL, USA",
+    "startTimeUTC": "2026-11-01T21:25Z",
+    "startTimeET": "2026-11-01T16:25:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-01",
+    "time": "20:20:00",
+    "home": "WSH",
+    "away": "PHI",
+    "location": "Northwest Stadium, Landover, MD, USA",
+    "startTimeUTC": "2026-11-02T01:20Z",
+    "startTimeET": "2026-11-01T20:20:00"
+  },
+  {
+    "week": 8,
+    "date": "2026-11-02",
+    "time": "20:15:00",
+    "home": "SEA",
+    "away": "CHI",
+    "location": "Lumen Field, Seattle, WA, USA",
+    "startTimeUTC": "2026-11-03T01:15Z",
+    "startTimeET": "2026-11-02T20:15:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-05",
+    "time": "20:15:00",
+    "home": "BAL",
+    "away": "JAX",
+    "location": "M&T Bank Stadium, Baltimore, MD, USA",
+    "startTimeUTC": "2026-11-06T01:15Z",
+    "startTimeET": "2026-11-05T20:15:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "09:30:00",
+    "home": "ATL",
+    "away": "CIN",
+    "location": "Santiago Bernabéu, Madrid, Spain",
+    "startTimeUTC": "2026-11-08T14:30Z",
+    "startTimeET": "2026-11-08T09:30:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "13:00:00",
+    "home": "IND",
+    "away": "DAL",
+    "location": "Lucas Oil Stadium, Indianapolis, IN, USA",
+    "startTimeUTC": "2026-11-08T18:00Z",
+    "startTimeET": "2026-11-08T13:00:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "13:00:00",
+    "home": "KC",
+    "away": "NYJ",
+    "location": "GEHA Field at Arrowhead Stadium, Kansas City, MO, USA",
+    "startTimeUTC": "2026-11-08T18:00Z",
+    "startTimeET": "2026-11-08T13:00:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "13:00:00",
+    "home": "MIA",
+    "away": "DET",
+    "location": "Hard Rock Stadium, Miami Gardens, FL, USA",
+    "startTimeUTC": "2026-11-08T18:00Z",
+    "startTimeET": "2026-11-08T13:00:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "13:00:00",
+    "home": "NO",
+    "away": "CLE",
+    "location": "Caesars Superdome, New Orleans, LA, USA",
+    "startTimeUTC": "2026-11-08T18:00Z",
+    "startTimeET": "2026-11-08T13:00:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "13:00:00",
+    "home": "PHI",
+    "away": "NYG",
+    "location": "Lincoln Financial Field, Philadelphia, PA, USA",
+    "startTimeUTC": "2026-11-08T18:00Z",
+    "startTimeET": "2026-11-08T13:00:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "13:00:00",
+    "home": "WSH",
+    "away": "LAR",
+    "location": "Northwest Stadium, Landover, MD, USA",
+    "startTimeUTC": "2026-11-08T18:00Z",
+    "startTimeET": "2026-11-08T13:00:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "13:00:00",
+    "home": "CAR",
+    "away": "DEN",
+    "location": "Bank of America Stadium, Charlotte, NC, USA",
+    "startTimeUTC": "2026-11-08T18:00Z",
+    "startTimeET": "2026-11-08T13:00:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "16:05:00",
+    "home": "LAC",
+    "away": "HOU",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-11-08T21:05Z",
+    "startTimeET": "2026-11-08T16:05:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "16:05:00",
+    "home": "SF",
+    "away": "LV",
+    "location": "Levi's Stadium, Santa Clara, CA, USA",
+    "startTimeUTC": "2026-11-08T21:05Z",
+    "startTimeET": "2026-11-08T16:05:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "16:25:00",
+    "home": "NE",
+    "away": "GB",
+    "location": "Gillette Stadium, Foxborough, MA, USA",
+    "startTimeUTC": "2026-11-08T21:25Z",
+    "startTimeET": "2026-11-08T16:25:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "16:25:00",
+    "home": "SEA",
+    "away": "ARI",
+    "location": "Lumen Field, Seattle, WA, USA",
+    "startTimeUTC": "2026-11-08T21:25Z",
+    "startTimeET": "2026-11-08T16:25:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-08",
+    "time": "20:20:00",
+    "home": "CHI",
+    "away": "TB",
+    "location": "Soldier Field, Chicago, IL, USA",
+    "startTimeUTC": "2026-11-09T01:20Z",
+    "startTimeET": "2026-11-08T20:20:00"
+  },
+  {
+    "week": 9,
+    "date": "2026-11-09",
+    "time": "20:15:00",
+    "home": "MIN",
+    "away": "BUF",
+    "location": "U.S. Bank Stadium, Minneapolis, MN, USA",
+    "startTimeUTC": "2026-11-10T01:15Z",
+    "startTimeET": "2026-11-09T20:15:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-12",
+    "time": "20:15:00",
+    "home": "NYG",
+    "away": "WSH",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-11-13T01:15Z",
+    "startTimeET": "2026-11-12T20:15:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "09:30:00",
+    "home": "DET",
+    "away": "NE",
+    "location": "FC Bayern Munich Stadium, Munich, Germany",
+    "startTimeUTC": "2026-11-15T14:30Z",
+    "startTimeET": "2026-11-15T09:30:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "13:00:00",
+    "home": "ATL",
+    "away": "KC",
+    "location": "Mercedes-Benz Stadium, Atlanta, GA, USA",
+    "startTimeUTC": "2026-11-15T18:00Z",
+    "startTimeET": "2026-11-15T13:00:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "13:00:00",
+    "home": "CLE",
+    "away": "HOU",
+    "location": "Huntington Bank Field, Cleveland, OH, USA",
+    "startTimeUTC": "2026-11-15T18:00Z",
+    "startTimeET": "2026-11-15T13:00:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "13:00:00",
+    "home": "GB",
+    "away": "MIN",
+    "location": "Lambeau Field, Green Bay, WI, USA",
+    "startTimeUTC": "2026-11-15T18:00Z",
+    "startTimeET": "2026-11-15T13:00:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "13:00:00",
+    "home": "TEN",
+    "away": "JAX",
+    "location": "Nissan Stadium, Nashville, TN, USA",
+    "startTimeUTC": "2026-11-15T18:00Z",
+    "startTimeET": "2026-11-15T13:00:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "13:00:00",
+    "home": "IND",
+    "away": "MIA",
+    "location": "Lucas Oil Stadium, Indianapolis, IN, USA",
+    "startTimeUTC": "2026-11-15T18:00Z",
+    "startTimeET": "2026-11-15T13:00:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "13:00:00",
+    "home": "NO",
+    "away": "CAR",
+    "location": "Caesars Superdome, New Orleans, LA, USA",
+    "startTimeUTC": "2026-11-15T18:00Z",
+    "startTimeET": "2026-11-15T13:00:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "13:00:00",
+    "home": "NYJ",
+    "away": "BUF",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-11-15T18:00Z",
+    "startTimeET": "2026-11-15T13:00:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "16:05:00",
+    "home": "LV",
+    "away": "SEA",
+    "location": "Allegiant Stadium, Las Vegas, NV, USA",
+    "startTimeUTC": "2026-11-15T21:05Z",
+    "startTimeET": "2026-11-15T16:05:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "16:05:00",
+    "home": "ARI",
+    "away": "LAR",
+    "location": "State Farm Stadium, Glendale, AZ, USA",
+    "startTimeUTC": "2026-11-15T21:05Z",
+    "startTimeET": "2026-11-15T16:05:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "16:25:00",
+    "home": "DAL",
+    "away": "SF",
+    "location": "AT&T Stadium, Arlington, TX, USA",
+    "startTimeUTC": "2026-11-15T21:25Z",
+    "startTimeET": "2026-11-15T16:25:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "time": "20:20:00",
+    "home": "CIN",
+    "away": "PIT",
+    "location": "Paycor Stadium, Cincinnati, OH, USA",
+    "startTimeUTC": "2026-11-16T01:20Z",
+    "startTimeET": "2026-11-15T20:20:00"
+  },
+  {
+    "week": 10,
+    "date": "2026-11-16",
+    "time": "20:15:00",
+    "home": "BAL",
+    "away": "LAC",
+    "location": "M&T Bank Stadium, Baltimore, MD, USA",
+    "startTimeUTC": "2026-11-17T01:15Z",
+    "startTimeET": "2026-11-16T20:15:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-19",
+    "time": "20:15:00",
+    "home": "HOU",
+    "away": "IND",
+    "location": "NRG Stadium, Houston, TX, USA",
+    "startTimeUTC": "2026-11-20T01:15Z",
+    "startTimeET": "2026-11-19T20:15:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "13:00:00",
+    "home": "BUF",
+    "away": "MIA",
+    "location": "Highmark Stadium, Orchard Park, NY, USA",
+    "startTimeUTC": "2026-11-22T18:00Z",
+    "startTimeET": "2026-11-22T13:00:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "13:00:00",
+    "home": "CHI",
+    "away": "NO",
+    "location": "Soldier Field, Chicago, IL, USA",
+    "startTimeUTC": "2026-11-22T18:00Z",
+    "startTimeET": "2026-11-22T13:00:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "13:00:00",
+    "home": "DAL",
+    "away": "TEN",
+    "location": "AT&T Stadium, Arlington, TX, USA",
+    "startTimeUTC": "2026-11-22T18:00Z",
+    "startTimeET": "2026-11-22T13:00:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "13:00:00",
+    "home": "DET",
+    "away": "TB",
+    "location": "Ford Field, Detroit, MI, USA",
+    "startTimeUTC": "2026-11-22T18:00Z",
+    "startTimeET": "2026-11-22T13:00:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "13:00:00",
+    "home": "KC",
+    "away": "ARI",
+    "location": "GEHA Field at Arrowhead Stadium, Kansas City, MO, USA",
+    "startTimeUTC": "2026-11-22T18:00Z",
+    "startTimeET": "2026-11-22T13:00:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "13:00:00",
+    "home": "NYG",
+    "away": "JAX",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-11-22T18:00Z",
+    "startTimeET": "2026-11-22T13:00:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "13:00:00",
+    "home": "CAR",
+    "away": "BAL",
+    "location": "Bank of America Stadium, Charlotte, NC, USA",
+    "startTimeUTC": "2026-11-22T18:00Z",
+    "startTimeET": "2026-11-22T13:00:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "16:05:00",
+    "home": "LAC",
+    "away": "NYJ",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-11-22T21:05Z",
+    "startTimeET": "2026-11-22T16:05:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "16:25:00",
+    "home": "DEN",
+    "away": "LV",
+    "location": "Empower Field at Mile High, Denver, CO, USA",
+    "startTimeUTC": "2026-11-22T21:25Z",
+    "startTimeET": "2026-11-22T16:25:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "16:25:00",
+    "home": "PHI",
+    "away": "PIT",
+    "location": "Lincoln Financial Field, Philadelphia, PA, USA",
+    "startTimeUTC": "2026-11-22T21:25Z",
+    "startTimeET": "2026-11-22T16:25:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-22",
+    "time": "20:20:00",
+    "home": "SF",
+    "away": "MIN",
+    "location": "Estadio Banorte, Mexico City, Mexico",
+    "startTimeUTC": "2026-11-23T01:20Z",
+    "startTimeET": "2026-11-22T20:20:00"
+  },
+  {
+    "week": 11,
+    "date": "2026-11-23",
+    "time": "20:15:00",
+    "home": "WSH",
+    "away": "CIN",
+    "location": "Northwest Stadium, Landover, MD, USA",
+    "startTimeUTC": "2026-11-24T01:15Z",
+    "startTimeET": "2026-11-23T20:15:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-25",
+    "time": "20:00:00",
+    "home": "LAR",
+    "away": "GB",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-11-26T01:00Z",
+    "startTimeET": "2026-11-25T20:00:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-26",
+    "time": "13:00:00",
+    "home": "DET",
+    "away": "CHI",
+    "location": "Ford Field, Detroit, MI, USA",
+    "startTimeUTC": "2026-11-26T18:00Z",
+    "startTimeET": "2026-11-26T13:00:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-26",
+    "time": "16:30:00",
+    "home": "DAL",
+    "away": "PHI",
+    "location": "AT&T Stadium, Arlington, TX, USA",
+    "startTimeUTC": "2026-11-26T21:30Z",
+    "startTimeET": "2026-11-26T16:30:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-26",
+    "time": "20:20:00",
+    "home": "BUF",
+    "away": "KC",
+    "location": "Highmark Stadium, Orchard Park, NY, USA",
+    "startTimeUTC": "2026-11-27T01:20Z",
+    "startTimeET": "2026-11-26T20:20:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-27",
+    "time": "15:00:00",
+    "home": "PIT",
+    "away": "DEN",
+    "location": "Acrisure Stadium, Pittsburgh, PA, USA",
+    "startTimeUTC": "2026-11-27T20:00Z",
+    "startTimeET": "2026-11-27T15:00:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-29",
+    "time": "13:00:00",
+    "home": "CIN",
+    "away": "NO",
+    "location": "Paycor Stadium, Cincinnati, OH, USA",
+    "startTimeUTC": "2026-11-29T18:00Z",
+    "startTimeET": "2026-11-29T13:00:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-29",
+    "time": "13:00:00",
+    "home": "CLE",
+    "away": "LV",
+    "location": "Huntington Bank Field, Cleveland, OH, USA",
+    "startTimeUTC": "2026-11-29T18:00Z",
+    "startTimeET": "2026-11-29T13:00:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-29",
+    "time": "13:00:00",
+    "home": "IND",
+    "away": "NYG",
+    "location": "Lucas Oil Stadium, Indianapolis, IN, USA",
+    "startTimeUTC": "2026-11-29T18:00Z",
+    "startTimeET": "2026-11-29T13:00:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-29",
+    "time": "13:00:00",
+    "home": "MIA",
+    "away": "NYJ",
+    "location": "Hard Rock Stadium, Miami Gardens, FL, USA",
+    "startTimeUTC": "2026-11-29T18:00Z",
+    "startTimeET": "2026-11-29T13:00:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-29",
+    "time": "13:00:00",
+    "home": "MIN",
+    "away": "ATL",
+    "location": "U.S. Bank Stadium, Minneapolis, MN, USA",
+    "startTimeUTC": "2026-11-29T18:00Z",
+    "startTimeET": "2026-11-29T13:00:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-29",
+    "time": "13:00:00",
+    "home": "HOU",
+    "away": "BAL",
+    "location": "NRG Stadium, Houston, TX, USA",
+    "startTimeUTC": "2026-11-29T18:00Z",
+    "startTimeET": "2026-11-29T13:00:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-29",
+    "time": "16:05:00",
+    "home": "JAX",
+    "away": "TEN",
+    "location": "EverBank Stadium, Jacksonville, FL, USA",
+    "startTimeUTC": "2026-11-29T21:05Z",
+    "startTimeET": "2026-11-29T16:05:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-29",
+    "time": "16:25:00",
+    "home": "ARI",
+    "away": "WSH",
+    "location": "State Farm Stadium, Glendale, AZ, USA",
+    "startTimeUTC": "2026-11-29T21:25Z",
+    "startTimeET": "2026-11-29T16:25:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-29",
+    "time": "16:25:00",
+    "home": "SF",
+    "away": "SEA",
+    "location": "Levi's Stadium, Santa Clara, CA, USA",
+    "startTimeUTC": "2026-11-29T21:25Z",
+    "startTimeET": "2026-11-29T16:25:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-29",
+    "time": "20:20:00",
+    "home": "LAC",
+    "away": "NE",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-11-30T01:20Z",
+    "startTimeET": "2026-11-29T20:20:00"
+  },
+  {
+    "week": 12,
+    "date": "2026-11-30",
+    "time": "20:15:00",
+    "home": "TB",
+    "away": "CAR",
+    "location": "Raymond James Stadium, Tampa, FL, USA",
+    "startTimeUTC": "2026-12-01T01:15Z",
+    "startTimeET": "2026-11-30T20:15:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-03",
+    "time": "20:15:00",
+    "home": "LAR",
+    "away": "KC",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-12-04T01:15Z",
+    "startTimeET": "2026-12-03T20:15:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "13:00:00",
+    "home": "ATL",
+    "away": "DET",
+    "location": "Mercedes-Benz Stadium, Atlanta, GA, USA",
+    "startTimeUTC": "2026-12-06T18:00Z",
+    "startTimeET": "2026-12-06T13:00:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "13:00:00",
+    "home": "CHI",
+    "away": "JAX",
+    "location": "Soldier Field, Chicago, IL, USA",
+    "startTimeUTC": "2026-12-06T18:00Z",
+    "startTimeET": "2026-12-06T13:00:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "13:00:00",
+    "home": "CLE",
+    "away": "CIN",
+    "location": "Huntington Bank Field, Cleveland, OH, USA",
+    "startTimeUTC": "2026-12-06T18:00Z",
+    "startTimeET": "2026-12-06T13:00:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "13:00:00",
+    "home": "TEN",
+    "away": "WSH",
+    "location": "Nissan Stadium, Nashville, TN, USA",
+    "startTimeUTC": "2026-12-06T18:00Z",
+    "startTimeET": "2026-12-06T13:00:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "13:00:00",
+    "home": "NO",
+    "away": "GB",
+    "location": "Caesars Superdome, New Orleans, LA, USA",
+    "startTimeUTC": "2026-12-06T18:00Z",
+    "startTimeET": "2026-12-06T13:00:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "13:00:00",
+    "home": "NYG",
+    "away": "SF",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-12-06T18:00Z",
+    "startTimeET": "2026-12-06T13:00:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "13:00:00",
+    "home": "TB",
+    "away": "LAC",
+    "location": "Raymond James Stadium, Tampa, FL, USA",
+    "startTimeUTC": "2026-12-06T18:00Z",
+    "startTimeET": "2026-12-06T13:00:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "16:05:00",
+    "home": "DEN",
+    "away": "MIA",
+    "location": "Empower Field at Mile High, Denver, CO, USA",
+    "startTimeUTC": "2026-12-06T21:05Z",
+    "startTimeET": "2026-12-06T16:05:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "16:05:00",
+    "home": "ARI",
+    "away": "PHI",
+    "location": "State Farm Stadium, Glendale, AZ, USA",
+    "startTimeUTC": "2026-12-06T21:05Z",
+    "startTimeET": "2026-12-06T16:05:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "16:25:00",
+    "home": "MIN",
+    "away": "CAR",
+    "location": "U.S. Bank Stadium, Minneapolis, MN, USA",
+    "startTimeUTC": "2026-12-06T21:25Z",
+    "startTimeET": "2026-12-06T16:25:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "16:25:00",
+    "home": "NE",
+    "away": "BUF",
+    "location": "Gillette Stadium, Foxborough, MA, USA",
+    "startTimeUTC": "2026-12-06T21:25Z",
+    "startTimeET": "2026-12-06T16:25:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "time": "20:20:00",
+    "home": "PIT",
+    "away": "HOU",
+    "location": "Acrisure Stadium, Pittsburgh, PA, USA",
+    "startTimeUTC": "2026-12-07T01:20Z",
+    "startTimeET": "2026-12-06T20:20:00"
+  },
+  {
+    "week": 13,
+    "date": "2026-12-07",
+    "time": "20:15:00",
+    "home": "SEA",
+    "away": "DAL",
+    "location": "Lumen Field, Seattle, WA, USA",
+    "startTimeUTC": "2026-12-08T01:15Z",
+    "startTimeET": "2026-12-07T20:15:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-10",
+    "time": "20:15:00",
+    "home": "NE",
+    "away": "MIN",
+    "location": "Gillette Stadium, Foxborough, MA, USA",
+    "startTimeUTC": "2026-12-11T01:15Z",
+    "startTimeET": "2026-12-10T20:15:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "13:00:00",
+    "home": "CLE",
+    "away": "ATL",
+    "location": "Huntington Bank Field, Cleveland, OH, USA",
+    "startTimeUTC": "2026-12-13T18:00Z",
+    "startTimeET": "2026-12-13T13:00:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "13:00:00",
+    "home": "DET",
+    "away": "TEN",
+    "location": "Ford Field, Detroit, MI, USA",
+    "startTimeUTC": "2026-12-13T18:00Z",
+    "startTimeET": "2026-12-13T13:00:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "13:00:00",
+    "home": "MIA",
+    "away": "CHI",
+    "location": "Hard Rock Stadium, Miami Gardens, FL, USA",
+    "startTimeUTC": "2026-12-13T18:00Z",
+    "startTimeET": "2026-12-13T13:00:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "13:00:00",
+    "home": "NYJ",
+    "away": "DEN",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-12-13T18:00Z",
+    "startTimeET": "2026-12-13T13:00:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "13:00:00",
+    "home": "PHI",
+    "away": "IND",
+    "location": "Lincoln Financial Field, Philadelphia, PA, USA",
+    "startTimeUTC": "2026-12-13T18:00Z",
+    "startTimeET": "2026-12-13T13:00:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "13:00:00",
+    "home": "WSH",
+    "away": "HOU",
+    "location": "Northwest Stadium, Landover, MD, USA",
+    "startTimeUTC": "2026-12-13T18:00Z",
+    "startTimeET": "2026-12-13T13:00:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "13:00:00",
+    "home": "CAR",
+    "away": "NO",
+    "location": "Bank of America Stadium, Charlotte, NC, USA",
+    "startTimeUTC": "2026-12-13T18:00Z",
+    "startTimeET": "2026-12-13T13:00:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "13:00:00",
+    "home": "BAL",
+    "away": "TB",
+    "location": "M&T Bank Stadium, Baltimore, MD, USA",
+    "startTimeUTC": "2026-12-13T18:00Z",
+    "startTimeET": "2026-12-13T13:00:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "16:05:00",
+    "home": "LV",
+    "away": "LAC",
+    "location": "Allegiant Stadium, Las Vegas, NV, USA",
+    "startTimeUTC": "2026-12-13T21:05Z",
+    "startTimeET": "2026-12-13T16:05:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "16:25:00",
+    "home": "CIN",
+    "away": "KC",
+    "location": "Paycor Stadium, Cincinnati, OH, USA",
+    "startTimeUTC": "2026-12-13T21:25Z",
+    "startTimeET": "2026-12-13T16:25:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "16:25:00",
+    "home": "SF",
+    "away": "LAR",
+    "location": "Levi's Stadium, Santa Clara, CA, USA",
+    "startTimeUTC": "2026-12-13T21:25Z",
+    "startTimeET": "2026-12-13T16:25:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "16:25:00",
+    "home": "SEA",
+    "away": "NYG",
+    "location": "Lumen Field, Seattle, WA, USA",
+    "startTimeUTC": "2026-12-13T21:25Z",
+    "startTimeET": "2026-12-13T16:25:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-13",
+    "time": "20:20:00",
+    "home": "GB",
+    "away": "BUF",
+    "location": "Lambeau Field, Green Bay, WI, USA",
+    "startTimeUTC": "2026-12-14T01:20Z",
+    "startTimeET": "2026-12-13T20:20:00"
+  },
+  {
+    "week": 14,
+    "date": "2026-12-14",
+    "time": "20:15:00",
+    "home": "JAX",
+    "away": "PIT",
+    "location": "EverBank Stadium, Jacksonville, FL, USA",
+    "startTimeUTC": "2026-12-15T01:15Z",
+    "startTimeET": "2026-12-14T20:15:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-17",
+    "time": "20:15:00",
+    "home": "LAC",
+    "away": "SF",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-12-18T01:15Z",
+    "startTimeET": "2026-12-17T20:15:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-19",
+    "time": "17:00:00",
+    "home": "PHI",
+    "away": "SEA",
+    "location": "Lincoln Financial Field, Philadelphia, PA, USA",
+    "startTimeUTC": "2026-12-19T22:00Z",
+    "startTimeET": "2026-12-19T17:00:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-19",
+    "time": "20:20:00",
+    "home": "BUF",
+    "away": "CHI",
+    "location": "Highmark Stadium, Orchard Park, NY, USA",
+    "startTimeUTC": "2026-12-20T01:20Z",
+    "startTimeET": "2026-12-19T20:20:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "13:00:00",
+    "home": "GB",
+    "away": "MIA",
+    "location": "Lambeau Field, Green Bay, WI, USA",
+    "startTimeUTC": "2026-12-20T18:00Z",
+    "startTimeET": "2026-12-20T13:00:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "13:00:00",
+    "home": "TEN",
+    "away": "IND",
+    "location": "Nissan Stadium, Nashville, TN, USA",
+    "startTimeUTC": "2026-12-20T18:00Z",
+    "startTimeET": "2026-12-20T13:00:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "13:00:00",
+    "home": "NYG",
+    "away": "CLE",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-12-20T18:00Z",
+    "startTimeET": "2026-12-20T13:00:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "13:00:00",
+    "home": "PIT",
+    "away": "BAL",
+    "location": "Acrisure Stadium, Pittsburgh, PA, USA",
+    "startTimeUTC": "2026-12-20T18:00Z",
+    "startTimeET": "2026-12-20T13:00:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "13:00:00",
+    "home": "TB",
+    "away": "NO",
+    "location": "Raymond James Stadium, Tampa, FL, USA",
+    "startTimeUTC": "2026-12-20T18:00Z",
+    "startTimeET": "2026-12-20T13:00:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "13:00:00",
+    "home": "WSH",
+    "away": "ATL",
+    "location": "Northwest Stadium, Landover, MD, USA",
+    "startTimeUTC": "2026-12-20T18:00Z",
+    "startTimeET": "2026-12-20T13:00:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "13:00:00",
+    "home": "CAR",
+    "away": "CIN",
+    "location": "Bank of America Stadium, Charlotte, NC, USA",
+    "startTimeUTC": "2026-12-20T18:00Z",
+    "startTimeET": "2026-12-20T13:00:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "13:00:00",
+    "home": "HOU",
+    "away": "JAX",
+    "location": "NRG Stadium, Houston, TX, USA",
+    "startTimeUTC": "2026-12-20T18:00Z",
+    "startTimeET": "2026-12-20T13:00:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "16:05:00",
+    "home": "ARI",
+    "away": "NYJ",
+    "location": "State Farm Stadium, Glendale, AZ, USA",
+    "startTimeUTC": "2026-12-20T21:05Z",
+    "startTimeET": "2026-12-20T16:05:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "16:25:00",
+    "home": "LV",
+    "away": "DEN",
+    "location": "Allegiant Stadium, Las Vegas, NV, USA",
+    "startTimeUTC": "2026-12-20T21:25Z",
+    "startTimeET": "2026-12-20T16:25:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "16:25:00",
+    "home": "LAR",
+    "away": "DAL",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2026-12-20T21:25Z",
+    "startTimeET": "2026-12-20T16:25:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-20",
+    "time": "20:20:00",
+    "home": "MIN",
+    "away": "DET",
+    "location": "U.S. Bank Stadium, Minneapolis, MN, USA",
+    "startTimeUTC": "2026-12-21T01:20Z",
+    "startTimeET": "2026-12-20T20:20:00"
+  },
+  {
+    "week": 15,
+    "date": "2026-12-21",
+    "time": "20:15:00",
+    "home": "KC",
+    "away": "NE",
+    "location": "GEHA Field at Arrowhead Stadium, Kansas City, MO, USA",
+    "startTimeUTC": "2026-12-22T01:15Z",
+    "startTimeET": "2026-12-21T20:15:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-24",
+    "time": "20:15:00",
+    "home": "PHI",
+    "away": "HOU",
+    "location": "Lincoln Financial Field, Philadelphia, PA, USA",
+    "startTimeUTC": "2026-12-25T01:15Z",
+    "startTimeET": "2026-12-24T20:15:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-25",
+    "time": "13:00:00",
+    "home": "CHI",
+    "away": "GB",
+    "location": "Soldier Field, Chicago, IL, USA",
+    "startTimeUTC": "2026-12-25T18:00Z",
+    "startTimeET": "2026-12-25T13:00:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-25",
+    "time": "16:30:00",
+    "home": "DEN",
+    "away": "BUF",
+    "location": "Empower Field at Mile High, Denver, CO, USA",
+    "startTimeUTC": "2026-12-25T21:30Z",
+    "startTimeET": "2026-12-25T16:30:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-25",
+    "time": "20:15:00",
+    "home": "SEA",
+    "away": "LAR",
+    "location": "Lumen Field, Seattle, WA, USA",
+    "startTimeUTC": "2026-12-26T01:15Z",
+    "startTimeET": "2026-12-25T20:15:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "00:00:00",
+    "home": "ATL",
+    "away": "TB",
+    "location": "Mercedes-Benz Stadium, Atlanta, GA, USA",
+    "startTimeUTC": "2026-12-27T05:00Z",
+    "startTimeET": "2026-12-27T00:00:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "00:00:00",
+    "home": "IND",
+    "away": "CIN",
+    "location": "Lucas Oil Stadium, Indianapolis, IN, USA",
+    "startTimeUTC": "2026-12-27T05:00Z",
+    "startTimeET": "2026-12-27T00:00:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "00:00:00",
+    "home": "MIN",
+    "away": "WSH",
+    "location": "U.S. Bank Stadium, Minneapolis, MN, USA",
+    "startTimeUTC": "2026-12-27T05:00Z",
+    "startTimeET": "2026-12-27T00:00:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "00:00:00",
+    "home": "PIT",
+    "away": "CAR",
+    "location": "Acrisure Stadium, Pittsburgh, PA, USA",
+    "startTimeUTC": "2026-12-27T05:00Z",
+    "startTimeET": "2026-12-27T00:00:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "13:00:00",
+    "home": "MIA",
+    "away": "LAC",
+    "location": "Hard Rock Stadium, Miami Gardens, FL, USA",
+    "startTimeUTC": "2026-12-27T18:00Z",
+    "startTimeET": "2026-12-27T13:00:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "13:00:00",
+    "home": "NO",
+    "away": "ARI",
+    "location": "Caesars Superdome, New Orleans, LA, USA",
+    "startTimeUTC": "2026-12-27T18:00Z",
+    "startTimeET": "2026-12-27T13:00:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "13:00:00",
+    "home": "NYJ",
+    "away": "NE",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2026-12-27T18:00Z",
+    "startTimeET": "2026-12-27T13:00:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "13:00:00",
+    "home": "BAL",
+    "away": "CLE",
+    "location": "M&T Bank Stadium, Baltimore, MD, USA",
+    "startTimeUTC": "2026-12-27T18:00Z",
+    "startTimeET": "2026-12-27T13:00:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "16:05:00",
+    "home": "LV",
+    "away": "TEN",
+    "location": "Allegiant Stadium, Las Vegas, NV, USA",
+    "startTimeUTC": "2026-12-27T21:05Z",
+    "startTimeET": "2026-12-27T16:05:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "16:25:00",
+    "home": "KC",
+    "away": "SF",
+    "location": "GEHA Field at Arrowhead Stadium, Kansas City, MO, USA",
+    "startTimeUTC": "2026-12-27T21:25Z",
+    "startTimeET": "2026-12-27T16:25:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-27",
+    "time": "20:20:00",
+    "home": "DAL",
+    "away": "JAX",
+    "location": "AT&T Stadium, Arlington, TX, USA",
+    "startTimeUTC": "2026-12-28T01:20Z",
+    "startTimeET": "2026-12-27T20:20:00"
+  },
+  {
+    "week": 16,
+    "date": "2026-12-28",
+    "time": "20:15:00",
+    "home": "DET",
+    "away": "NYG",
+    "location": "Ford Field, Detroit, MI, USA",
+    "startTimeUTC": "2026-12-29T01:15Z",
+    "startTimeET": "2026-12-28T20:15:00"
+  },
+  {
+    "week": 17,
+    "date": "2026-12-31",
+    "time": "20:15:00",
+    "home": "CIN",
+    "away": "BAL",
+    "location": "Paycor Stadium, Cincinnati, OH, USA",
+    "startTimeUTC": "2027-01-01T01:15Z",
+    "startTimeET": "2026-12-31T20:15:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "00:00:00",
+    "home": "NE",
+    "away": "DEN",
+    "location": "Gillette Stadium, Foxborough, MA, USA",
+    "startTimeUTC": "2027-01-03T05:00Z",
+    "startTimeET": "2027-01-03T00:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "00:00:00",
+    "home": "LAC",
+    "away": "KC",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2027-01-03T05:00Z",
+    "startTimeET": "2027-01-03T00:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "00:00:00",
+    "home": "TB",
+    "away": "LAR",
+    "location": "Raymond James Stadium, Tampa, FL, USA",
+    "startTimeUTC": "2027-01-03T05:00Z",
+    "startTimeET": "2027-01-03T00:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "00:00:00",
+    "home": "JAX",
+    "away": "WSH",
+    "location": "EverBank Stadium, Jacksonville, FL, USA",
+    "startTimeUTC": "2027-01-03T05:00Z",
+    "startTimeET": "2027-01-03T00:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "13:00:00",
+    "home": "ATL",
+    "away": "NO",
+    "location": "Mercedes-Benz Stadium, Atlanta, GA, USA",
+    "startTimeUTC": "2027-01-03T18:00Z",
+    "startTimeET": "2027-01-03T13:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "13:00:00",
+    "home": "CLE",
+    "away": "IND",
+    "location": "Huntington Bank Field, Cleveland, OH, USA",
+    "startTimeUTC": "2027-01-03T18:00Z",
+    "startTimeET": "2027-01-03T13:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "13:00:00",
+    "home": "DAL",
+    "away": "NYG",
+    "location": "AT&T Stadium, Arlington, TX, USA",
+    "startTimeUTC": "2027-01-03T18:00Z",
+    "startTimeET": "2027-01-03T13:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "13:00:00",
+    "home": "TEN",
+    "away": "PIT",
+    "location": "Nissan Stadium, Nashville, TN, USA",
+    "startTimeUTC": "2027-01-03T18:00Z",
+    "startTimeET": "2027-01-03T13:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "13:00:00",
+    "home": "MIA",
+    "away": "BUF",
+    "location": "Hard Rock Stadium, Miami Gardens, FL, USA",
+    "startTimeUTC": "2027-01-03T18:00Z",
+    "startTimeET": "2027-01-03T13:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "13:00:00",
+    "home": "NYJ",
+    "away": "MIN",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2027-01-03T18:00Z",
+    "startTimeET": "2027-01-03T13:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "13:00:00",
+    "home": "CAR",
+    "away": "SEA",
+    "location": "Bank of America Stadium, Charlotte, NC, USA",
+    "startTimeUTC": "2027-01-03T18:00Z",
+    "startTimeET": "2027-01-03T13:00:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "16:05:00",
+    "home": "ARI",
+    "away": "LV",
+    "location": "State Farm Stadium, Glendale, AZ, USA",
+    "startTimeUTC": "2027-01-03T21:05Z",
+    "startTimeET": "2027-01-03T16:05:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "16:25:00",
+    "home": "CHI",
+    "away": "DET",
+    "location": "Soldier Field, Chicago, IL, USA",
+    "startTimeUTC": "2027-01-03T21:25Z",
+    "startTimeET": "2027-01-03T16:25:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-03",
+    "time": "20:20:00",
+    "home": "SF",
+    "away": "PHI",
+    "location": "Levi's Stadium, Santa Clara, CA, USA",
+    "startTimeUTC": "2027-01-04T01:20Z",
+    "startTimeET": "2027-01-03T20:20:00"
+  },
+  {
+    "week": 17,
+    "date": "2027-01-04",
+    "time": "20:15:00",
+    "home": "GB",
+    "away": "HOU",
+    "location": "Lambeau Field, Green Bay, WI, USA",
+    "startTimeUTC": "2027-01-05T01:15Z",
+    "startTimeET": "2027-01-04T20:15:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "BUF",
+    "away": "NYJ",
+    "location": "Highmark Stadium, Orchard Park, NY, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "CIN",
+    "away": "CLE",
+    "location": "Paycor Stadium, Cincinnati, OH, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "DEN",
+    "away": "LAC",
+    "location": "Empower Field at Mile High, Denver, CO, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "GB",
+    "away": "DET",
+    "location": "Lambeau Field, Green Bay, WI, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "IND",
+    "away": "JAX",
+    "location": "Lucas Oil Stadium, Indianapolis, IN, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "KC",
+    "away": "LV",
+    "location": "GEHA Field at Arrowhead Stadium, Kansas City, MO, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "LAR",
+    "away": "SEA",
+    "location": "SoFi Stadium, Inglewood, CA, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "MIN",
+    "away": "CHI",
+    "location": "U.S. Bank Stadium, Minneapolis, MN, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "NE",
+    "away": "MIA",
+    "location": "Gillette Stadium, Foxborough, MA, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "NO",
+    "away": "TB",
+    "location": "Caesars Superdome, New Orleans, LA, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "NYG",
+    "away": "PHI",
+    "location": "MetLife Stadium, East Rutherford, NJ, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "ARI",
+    "away": "SF",
+    "location": "State Farm Stadium, Glendale, AZ, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "WSH",
+    "away": "DAL",
+    "location": "Northwest Stadium, Landover, MD, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "CAR",
+    "away": "ATL",
+    "location": "Bank of America Stadium, Charlotte, NC, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "BAL",
+    "away": "PIT",
+    "location": "M&T Bank Stadium, Baltimore, MD, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  },
+  {
+    "week": 18,
+    "date": "2027-01-10",
+    "time": "00:00:00",
+    "home": "HOU",
+    "away": "TEN",
+    "location": "NRG Stadium, Houston, TX, USA",
+    "startTimeUTC": "2027-01-10T05:00Z",
+    "startTimeET": "2027-01-10T00:00:00"
+  }
+]
