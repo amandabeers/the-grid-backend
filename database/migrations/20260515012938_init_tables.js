@@ -31,34 +31,6 @@ exports.up = async function (knex) {
     table.timestamp('created_at').defaultTo(knex.fn.now());
   });
 
-  await knex.schema.createTable('invites', (table) => {
-    table.increments('id').primary();
-    table.string('token').notNullable().unique();
-    table
-      .integer('season_id')
-      .unsigned()
-      .notNullable()
-      .references('id')
-      .inTable('seasons')
-      .onDelete('CASCADE');
-    table
-      .integer('created_by')
-      .unsigned()
-      .notNullable()
-      .references('id')
-      .inTable('users')
-      .onDelete('CASCADE');
-    table
-      .integer('used_by')
-      .unsigned()
-      .nullable()
-      .references('id')
-      .inTable('users')
-      .onDelete('SET NULL');
-    table.datetime('expires_at').nullable();
-    table.timestamp('created_at').defaultTo(knex.fn.now());
-  });
-
   await knex.schema.createTable('conferences', (table) => {
     table.increments('id').primary();
     table.string('espn_conference_id').unique().nullable();
@@ -199,7 +171,6 @@ exports.down = function (knex) {
     .dropTableIfExists('teams')
     .dropTableIfExists('divisions')
     .dropTableIfExists('conferences')
-    .dropTableIfExists('invites')
     .dropTableIfExists('seasons')
     .dropTableIfExists('users');
 };

@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-The Grid is a web application where a small, invite-only group of users each predict the outcome (win, loss, or tie) of every NFL game in a season, for a specific team in each matchup. Predictions lock at the start of the season and cannot be edited afterward. Each finished Grid must include at least one Tie prediction to be considered valid. Users can track their live accuracy throughout the season and compare their completed Grid against other users' Grids.
+The Grid is a web application where a small group of users each predict the outcome (win, loss, or tie) of every NFL game in a season, for a specific team in each matchup. Predictions lock at the start of the season and cannot be edited afterward. Each finished Grid must include at least one Tie prediction to be considered valid. Users can track their live accuracy throughout the season and compare their completed Grid against other users' Grids.
 
 ### 1.1 Goals
 - Let users build a full-season slate of picks before kickoff.
@@ -13,7 +13,6 @@ The Grid is a web application where a small, invite-only group of users each pre
 - Let users compare their full Grid, game by game, against another user's Grid.
 
 ### 1.2 Non-goals (out of scope for v1)
-- Public sign-up — access is invite-link only, small private group.
 - Payments, wagering, or prize tracking.
 - Mobile native apps.
 - Real-time push notifications (polling/manual refresh is acceptable for v1).
@@ -34,7 +33,7 @@ This repository and spec cover **the backend** — a REST API, the data layer, a
 | Query builder | Knex.js |
 | Database | SQLite via `better-sqlite3`, JSON columns for flexible fields |
 | External data | ESPN's unofficial scoreboard API |
-| Auth | Invite-link based account creation, session-based auth |
+| Auth | Email + password registration, session-based auth |
 
 ### 2.1 Why this stack works here
 - A single small SQLite file is appropriate for a small private group with low write volume (picks are entered once per user per season; scores update periodically).
@@ -60,13 +59,12 @@ This repository and spec cover **the backend** — a REST API, the data layer, a
 ## 4. User Roles & Auth
 
 - **Member**: Default role. Can build their own Grid, view their own accuracy, and view other members' completed Grids (read-only comparison).
-- **Admin**: Can generate invite links, manage seasons (trigger schedule import, set lock time), and trigger score refresh.
+- **Admin**: Can manage seasons (trigger schedule import, set lock time) and trigger score refresh.
 
 ### 4.1 Auth flow
-1. Admin generates an invite link (a single-use or time-limited token tied to a season/group).
-2. Invitee opens the link, sets username/email + password.
+1. A user registers via the public registration route with username/email + password.
+2. The password is hashed (bcrypt/argon2) and the account is created with the default `member` role.
 3. Standard email+password login afterward, session stored via HTTP-only cookie (e.g. `express-session` or a JWT-in-cookie approach — recommend session for simplicity at this scale).
-4. No public registration route exists; account creation requires a valid invite token.
 
 ---
 
@@ -84,18 +82,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | role | text | `member` \| `admin`; defaults to `member` |
 | created_at | datetime | |
 
-### 5.2 `invites`
-| Column | Type | Notes |
-|---|---|---|
-| id | integer PK | |
-| token | text, unique | random opaque string |
-| season_id | integer FK | which season/group this invite is for |
-| created_by | integer FK → users.id | |
-| used_by | integer FK → users.id, nullable | null until redeemed |
-| expires_at | datetime, nullable | |
-| created_at | datetime | |
-
-### 5.3 `seasons`
+### 5.2 `seasons`
 | Column | Type | Notes |
 |---|---|---|
 | id | integer PK | |
@@ -104,7 +91,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | status | text | `upcoming` \| `picks_open` \| `locked` \| `in_progress` \| `completed`; defaults to `upcoming` |
 | created_at | datetime | |
 
-### 5.4 `conferences`
+### 5.3 `conferences`
 | Column | Type | Notes |
 |---|---|---|
 | id | integer PK | |
@@ -113,7 +100,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | abbreviation | text | e.g. "AFC" |
 | metadata | JSON, nullable | raw extra fields from ESPN |
 
-### 5.5 `divisions`
+### 5.4 `divisions`
 | Column | Type | Notes |
 |---|---|---|
 | id | integer PK | |
@@ -121,7 +108,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | name | text | e.g. "North" |
 | abbreviation | text, nullable | e.g. "AFC North" |
 
-### 5.6 `teams`
+### 5.5 `teams`
 | Column | Type | Notes |
 |---|---|---|
 | id | integer PK | |
@@ -133,7 +120,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | logo_url | text, nullable | |
 | metadata | JSON, nullable | raw extra fields from ESPN |
 
-### 5.7 `weeks`
+### 5.6 `weeks`
 | Column | Type | Notes |
 |---|---|---|
 | id | integer PK | |
@@ -141,7 +128,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | week_number | integer | e.g. 1–18 for the regular season |
 | season_type | integer | 1=preseason, 2=regular, 3=postseason (ESPN convention); defaults to `2`; v1 imports regular season only (§9) |
 
-### 5.8 `games`
+### 5.7 `games`
 | Column | Type | Notes |
 |---|---|---|
 | id | integer PK | |
@@ -160,9 +147,9 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 | raw_data | JSON, nullable | full ESPN payload snapshot for the game, for debugging/audit |
 | updated_at | datetime | |
 
-> **No separate `outcome` table.** A game's outcome is stored directly on `games.result` (`home_win` \| `away_win` \| `tie`), and per-pick correctness on `picks.is_correct` (§5.9), both computed at score time (§6.3). The migration has been reconciled to this spec and the `outcome` table dropped.
+> **No separate `outcome` table.** A game's outcome is stored directly on `games.result` (`home_win` \| `away_win` \| `tie`), and per-pick correctness on `picks.is_correct` (§5.8), both computed at score time (§6.3). The migration has been reconciled to this spec and the `outcome` table dropped.
 
-### 5.9 `picks`
+### 5.8 `picks`
 | Column | Type | Notes |
 |---|---|---|
 | id | integer PK | |
@@ -176,7 +163,7 @@ Using `better-sqlite3` + Knex migrations. JSON columns used for flexible/denorma
 
 Unique constraint on `(user_id, game_id)` — one pick per user per game.
 
-### 5.10 `grids` (optional convenience/derived table, or computed view)
+### 5.9 `grids` (optional convenience/derived table, or computed view)
 Rather than a separate mutable table, a Grid is best modeled as a **derived view**: "all picks by user X for season Y," with completeness computed on read (see §6.2). This avoids data duplication and sync bugs. **The initial migration intentionally does not create this table** — a Grid is currently a derived view. If a persisted summary is later wanted for fast comparison/leaderboard pages, add:
 
 | Column | Type | Notes |
@@ -236,13 +223,12 @@ Rather than a separate mutable table, a Grid is best modeled as a **derived view
 
 | Method | Path | Purpose | Auth |
 |---|---|---|---|
-| POST | `/api/invites/:token/accept` | Create account via invite | public (token-gated) |
+| POST | `/api/auth/register` | Create account (public registration) | public |
 | POST | `/api/auth/login` | Log in | public |
 | POST | `/api/auth/logout` | Log out | member |
 | GET | `/api/seasons/:year` | Season metadata, lock time, status | member |
 | POST | `/api/admin/seasons/:year/import-schedule` | Pull full schedule from ESPN, populate `games`/`teams` | admin |
 | POST | `/api/admin/seasons/:year/refresh-scores` | Pull latest scores, update results, recompute correctness | admin |
-| POST | `/api/admin/invites` | Generate invite link | admin |
 | GET | `/api/seasons/:year/games` | List all games for the season | member |
 | GET | `/api/seasons/:year/picks/me` | Get my current picks/Grid | member |
 | PUT | `/api/seasons/:year/picks/:gameId` | Set/update a pick (rejected after lock) | member |
@@ -266,7 +252,7 @@ Grids are **fully invisible** to other users before `lock_at` — not just the p
 - Schedule/scores by week: `GET https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?seasontype={seasontype}&week={week}&dates={year}`
 - Full-season event list (alternative, useful for bulk import): `GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/{year}/types/2/events?limit=1000`
 
-Each `events[]` entry in the scoreboard response contains the game's ESPN event ID, competitors (home/away team refs with scores), status (`status.type.state`: `pre` / `in` / `post`), and date/kickoff time — this maps directly onto the `games` table fields in §5.5.
+Each `events[]` entry in the scoreboard response contains the game's ESPN event ID, competitors (home/away team refs with scores), status (`status.type.state`: `pre` / `in` / `post`), and date/kickoff time — this maps directly onto the `games` table fields in §5.7.
 
 ### 8.2 Important caveats
 - **This is an unofficial, undocumented API.** ESPN can change or remove it without notice, and there's no published rate limit or SLA. Build the import/refresh layer behind an internal abstraction (e.g. a `ScoreProvider` interface) so swapping to a paid provider (SportRadar, etc.) later doesn't require touching the rest of the app.
@@ -293,12 +279,12 @@ Each `events[]` entry in the scoreboard response contains the game's ESPN event 
 
 1. DB schema + Knex migrations (§5).
 2. ESPN import job (schedule → `teams`/`games`) behind a `ScoreProvider` abstraction (§8.2).
-3. Auth + invite flow (§4).
+3. Auth + registration flow (§4).
 4. Pick CRUD with lock enforcement (§6.1).
 5. Grid completeness validation + submit flow (§6.2).
 6. Score refresh job + correctness computation (§6.3).
 7. My-accuracy endpoint (data for the dashboard view).
 8. Grid-vs-Grid comparison endpoint (§6.4).
-9. Admin tooling (invite generation, manual schedule/score refresh triggers).
+9. Admin tooling (manual schedule/score refresh triggers).
 
 > This order covers the backend only. The client UI (dashboard, comparison, pick-entry screens) is built in the separate client repo against these endpoints and is out of scope here.
