@@ -1,24 +1,21 @@
 // Update with your config settings.
 require('dotenv').config();
-console.log('DATABASE_URL', process.env.DATABASE_URL)
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 module.exports = {
 
   development: {
-    client: 'pg',
+    client: 'better-sqlite3',
     connection: {
-      host: 'localhost',
-      database: process.env.PGDATABASE,
-      user:     process.env.PGUSER,
-      password: process.env.PGPASSWORD,
-      port: process.env.PGPORT
+      filename: process.env.DEV_DATABASE
     },
+    useNullAsDefault: true,
     pool: {
       afterCreate: (conn, done) => {
-        console.log(process.env.PGDATABASE);
-        console.log('Connection established');
+        conn.pragma('journal_mode = WAL');
+        conn.pragma('foreign_keys = ON');
+        console.log('Connection established', process.env.DEV_DATABASE);
         done();
       }
     },
@@ -33,12 +30,11 @@ module.exports = {
   },
 
   staging: {
-    client: 'pg',
+    client: 'better-sqlite3',
     connection: {
-      database: process.env.PGDATABASE,
-      user:     process.env.PGUSER,
-      password: process.env.PGPASSWORD
+      filename: process.env.DEV_DATABASE
     },
+    useNullAsDefault: true,
     pool: {
       min: 0,
       max: 10
@@ -50,14 +46,16 @@ module.exports = {
   },
 
   production: {
-    client: 'pg',
+    client: 'better-sqlite3',
     connection: process.env.DATABASE_URL,
+    useNullAsDefault: true,
     pool: {
       min: 0,
       max: 10,
       afterCreate: (conn, done) => {
-        console.log(process.env.DATABASE_URL);
-        console.log('Connection established');
+        conn.pragma('journal_mode = WAL');
+        conn.pragma('foreign_keys = ON');
+        console.log('Connection established', process.env.DATABASE_URL);
         done();
       }
     },
