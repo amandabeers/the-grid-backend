@@ -7,7 +7,6 @@ exports.seed = async function(knex) {
   await knex('picks').del();
   await knex('games').del();
   await knex('weeks').del();
-  await knex('invites').del();
   await knex('users').del();
   await knex('seasons').del();
   await knex('teams').del();
