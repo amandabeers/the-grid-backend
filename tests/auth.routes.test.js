@@ -152,9 +152,10 @@ describe('POST /api/auth/logout', () => {
     expect(cookie).toMatch(/Expires=Thu, 01 Jan 1970/);
   });
 
-  it('returns 401 without a cookie', async () => {
+  it('clears the cookie even without a session (idempotent)', async () => {
     const res = await request(app).post('/api/auth/logout');
-    expect(res.status).toBe(401);
+    expect(res.status).toBe(204);
+    expect(res.headers['set-cookie'][0]).toMatch(new RegExp(`^${AUTH_COOKIE}=;`));
   });
 });
 
