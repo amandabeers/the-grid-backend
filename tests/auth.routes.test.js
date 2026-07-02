@@ -74,6 +74,7 @@ describe('POST /api/auth/register', () => {
     const res = await request(app).post('/api/auth/register').send(validBody);
 
     expect(res.status).toBe(409);
+    expect(res.body.field).toBe('email');
     expect(userModel.create).not.toHaveBeenCalled();
   });
 
@@ -84,6 +85,7 @@ describe('POST /api/auth/register', () => {
     const res = await request(app).post('/api/auth/register').send(validBody);
 
     expect(res.status).toBe(409);
+    expect(res.body.field).toBe('username');
     expect(userModel.create).not.toHaveBeenCalled();
   });
 

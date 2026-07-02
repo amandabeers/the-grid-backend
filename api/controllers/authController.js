@@ -18,10 +18,10 @@ const register = async (req, res) => {
   const { email, username, password } = req.body;
 
   if (await userModel.findByEmail(email)) {
-    return res.status(409).json({ error: 'Email already in use' });
+    return res.status(409).json({ error: 'Email already in use', field: 'email' });
   }
   if (await userModel.findByUsername(username)) {
-    return res.status(409).json({ error: 'Username already taken' });
+    return res.status(409).json({ error: 'Username already taken', field: 'username' });
   }
 
   const password_hash = await hashPassword(password);
@@ -33,9 +33,10 @@ const register = async (req, res) => {
     // The pre-checks above cover the common case; the unique constraint is the
     // authoritative guard against a race between check and insert.
     if (isUniqueViolation(err)) {
-      const field = /username/i.test(err.message) ? 'Username' : 'Email';
-      const message = field === 'Username' ? 'Username already taken' : 'Email already in use';
-      return res.status(409).json({ error: message });
+      const isUsername = /username/i.test(err.message);
+      const message = isUsername ? 'Username already taken' : 'Email already in use';
+      const field = isUsername ? 'username' : 'email';
+      return res.status(409).json({ error: message, field });
     }
     throw err;
   }
