@@ -1,10 +1,11 @@
 const jwt = require('jsonwebtoken');
+const ms = require('ms');
 
 const AUTH_COOKIE = 'token';
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '7d';
 
-// Cookie max-age (ms) kept in sync with the token's 7-day default lifetime.
-const COOKIE_MAX_AGE = 7 * 24 * 60 * 60 * 1000;
+// Cookie max-age (ms) derived from the token lifetime so the two stay in sync.
+const COOKIE_MAX_AGE = ms(JWT_EXPIRES_IN);
 
 const getSecret = () => {
   const secret = process.env.JWT_SECRET;
@@ -20,7 +21,10 @@ const verifyAuthToken = (token) => jwt.verify(token, getSecret());
 const cookieOptions = {
   httpOnly: true,
   sameSite: 'lax',
-  secure: process.env.COOKIE_SECURE === 'true',
+  // Secure (HTTPS-only) is opt-out via COOKIE_SECURE, else on by default in production.
+  secure: process.env.COOKIE_SECURE !== undefined
+    ? process.env.COOKIE_SECURE === 'true'
+    : process.env.NODE_ENV === 'production',
   maxAge: COOKIE_MAX_AGE,
 };
 

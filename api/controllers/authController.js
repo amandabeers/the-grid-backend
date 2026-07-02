@@ -2,6 +2,11 @@ const userModel = require('../models/userModel.js');
 const { hashPassword, verifyPassword } = require('../../utils/password.js');
 const { AUTH_COOKIE, signAuthToken, cookieOptions } = require('../../utils/jwt.js');
 
+// Detect a SQLite UNIQUE constraint violation from the insert.
+const isUniqueViolation = (err) =>
+  err && (err.code === 'SQLITE_CONSTRAINT_UNIQUE' ||
+    /UNIQUE constraint failed/i.test(err.message || ''));
+
 // Issue the auth cookie for a user row.
 const setAuthCookie = (res, user) => {
   const token = signAuthToken({ id: user.id, role: user.role });
@@ -20,7 +25,20 @@ const register = async (req, res) => {
   }
 
   const password_hash = await hashPassword(password);
-  const user = await userModel.create({ email, username, password_hash });
+
+  let user;
+  try {
+    user = await userModel.create({ email, username, password_hash });
+  } catch (err) {
+    // The pre-checks above cover the common case; the unique constraint is the
+    // authoritative guard against a race between check and insert.
+    if (isUniqueViolation(err)) {
+      const field = /username/i.test(err.message) ? 'Username' : 'Email';
+      const message = field === 'Username' ? 'Username already taken' : 'Email already in use';
+      return res.status(409).json({ error: message });
+    }
+    throw err;
+  }
 
   setAuthCookie(res, user);
   res.status(201).json({ user: userModel.toPublic(user) });

@@ -56,5 +56,4 @@ Loaded from `.env` (gitignored; no `.env.example` exists yet): `NODE_ENV`, `DEV_
 
 - **Migration & seed are reconciled with `SPEC.md`:** `database/migrations/20260515012938_init_tables.js` uses plural snake_case tables, drops the `outcome` table (game outcome lives on `games.result`, per-pick correctness on `picks.is_correct`), and adds ESPN id columns, `lock_at`, etc. `database/seeds/init_season.js` matches this schema and seeds conferences/divisions/teams plus the 2026 season, 18 weeks, and ~272 games (setting `seasons.lock_at` to the first kickoff).
 - **Seeds are destructive:** `init_season.js` deletes all rows from the tables it manages on every run.
-- `package.json` `main` is `index.js`, but the real entry point is `server.js`.
 - `server.js` `checkConnection()` reads `confs.rows` (a Postgres result shape) from a `better-sqlite3` query — a leftover that does not work with the SQLite driver.

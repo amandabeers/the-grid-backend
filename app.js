@@ -16,7 +16,7 @@ app.use(helmet());
 // `credentials: true` is required so the browser sends/stores the auth cookie.
 app.use(cors({
   origin: process.env.CLIENT_ORIGIN ||
-  `http://localhost:${process.env.CLIENT_DEV_PORT}`,
+  `http://localhost:${process.env.CLIENT_DEV_PORT || 5173}`,
   credentials: true,
 }));
 app.use(bodyParser.json());
