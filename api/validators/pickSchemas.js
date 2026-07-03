@@ -1,14 +1,15 @@
 const Joi = require('joi');
 
-// A pick is either a team to win (requires picked_team_id) or a tie (no team).
-// That picked_team_id belongs to the game is checked in the controller, not here.
+// A pick is either a team to win (requires pickedTeamId) or a tie (no team).
+// That pickedTeamId belongs to the game is checked in the controller, not here.
+// The number check lives inside the teamWin branch so a tie may send an explicit
+// pickedTeamId: null (or omit it, or send any value) — all dropped; the controller
+// stores null. Keeping number() on the base would reject an explicit null.
 const setPickSchema = Joi.object({
-  pick_type: Joi.string().valid('team_win', 'tie').required(),
-  picked_team_id: Joi.number().integer().when('pick_type', {
-    is: 'team_win',
-    then: Joi.required(),
-    // Irrelevant for a tie: drop any value the client sends; the controller
-    // stores null.
+  pickType: Joi.string().valid('teamWin', 'tie').required(),
+  pickedTeamId: Joi.any().when('pickType', {
+    is: 'teamWin',
+    then: Joi.number().integer().required(),
     otherwise: Joi.any().strip(),
   }),
 });

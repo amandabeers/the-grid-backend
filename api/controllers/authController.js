@@ -24,11 +24,11 @@ const register = async (req, res) => {
     return res.status(409).json({ error: 'Username already taken' });
   }
 
-  const password_hash = await hashPassword(password);
+  const passwordHash = await hashPassword(password);
 
   let user;
   try {
-    user = await userModel.create({ email, username, password_hash });
+    user = await userModel.create({ email, username, passwordHash });
   } catch (err) {
     // The pre-checks above cover the common case; the unique constraint is the
     // authoritative guard against a race between check and insert.
@@ -50,7 +50,7 @@ const login = async (req, res) => {
   const user = await userModel.findByEmail(email);
 
   // Generic message either way: no user-enumeration hint.
-  if (!user || !(await verifyPassword(password, user.password_hash))) {
+  if (!user || !(await verifyPassword(password, user.passwordHash))) {
     return res.status(401).json({ error: 'Invalid email or password' });
   }
 

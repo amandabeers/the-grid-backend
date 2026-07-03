@@ -16,22 +16,22 @@ const setPick = async (req, res) => {
     return res.status(404).json({ error: 'Game not found in this season' });
   }
 
-  const { pick_type } = req.body;
-  let picked_team_id = null;
-  if (pick_type === 'team_win') {
-    picked_team_id = req.body.picked_team_id;
-    if (![game.home_team_id, game.away_team_id].includes(picked_team_id)) {
+  const { pickType } = req.body;
+  let pickedTeamId = null;
+  if (pickType === 'teamWin') {
+    pickedTeamId = req.body.pickedTeamId;
+    if (![game.homeTeamId, game.awayTeamId].includes(pickedTeamId)) {
       return res
         .status(400)
-        .json({ error: 'picked_team_id must be one of the two teams in this game' });
+        .json({ error: 'pickedTeamId must be one of the two teams in this game' });
     }
   }
 
   const pick = await pickModel.upsert({
-    user_id: req.user.id,
-    game_id: gameId,
-    picked_team_id,
-    pick_type,
+    userId: req.user.id,
+    gameId,
+    pickedTeamId,
+    pickType,
   });
   res.status(200).json({ pick });
 };
@@ -46,14 +46,14 @@ const randomize = async (req, res) => {
 
   const userId = req.user.id;
   const rows = games.map((game) => ({
-    user_id: userId,
-    game_id: game.id,
-    picked_team_id: Math.random() < 0.5 ? game.home_team_id : game.away_team_id,
-    pick_type: 'team_win',
+    userId,
+    gameId: game.id,
+    pickedTeamId: Math.random() < 0.5 ? game.homeTeamId : game.awayTeamId,
+    pickType: 'teamWin',
   }));
 
   const tieIndex = Math.floor(Math.random() * rows.length);
-  rows[tieIndex] = { user_id: userId, game_id: rows[tieIndex].game_id, picked_team_id: null, pick_type: 'tie' };
+  rows[tieIndex] = { userId, gameId: rows[tieIndex].gameId, pickedTeamId: null, pickType: 'tie' };
 
   await pickModel.replaceAllForUserSeason(
     userId,

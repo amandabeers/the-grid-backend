@@ -12,7 +12,7 @@ jest.mock('../api/models/userModel', () => ({
   // Real strip implementation — the controller relies on this behavior.
   toPublic: (user) => {
     if (!user) return null;
-    const { password_hash, ...rest } = user;
+    const { passwordHash, ...rest } = user;
     return rest;
   },
 }));
@@ -32,9 +32,9 @@ const sampleUser = {
   id: 1,
   email: 'a@b.com',
   username: 'amanda',
-  password_hash: 'hashed-pw',
+  passwordHash: 'hashed-pw',
   role: 'member',
-  created_at: '2026-07-01 00:00:00',
+  createdAt: '2026-07-01 00:00:00',
 };
 
 // Build a valid auth cookie using the real signing util.
@@ -59,12 +59,12 @@ describe('POST /api/auth/register', () => {
     expect(res.headers['set-cookie'][0]).toMatch(new RegExp(`^${AUTH_COOKIE}=`));
     expect(res.headers['set-cookie'][0]).toMatch(/HttpOnly/i);
     expect(res.body.user).toMatchObject({ id: 1, email: 'a@b.com', role: 'member' });
-    expect(res.body.user).not.toHaveProperty('password_hash');
+    expect(res.body.user).not.toHaveProperty('passwordHash');
     expect(hashPassword).toHaveBeenCalledWith('password123');
     expect(userModel.create).toHaveBeenCalledWith({
       email: 'a@b.com',
       username: 'amanda',
-      password_hash: 'hashed-pw',
+      passwordHash: 'hashed-pw',
     });
   });
 
@@ -110,7 +110,7 @@ describe('POST /api/auth/login', () => {
 
     expect(res.status).toBe(200);
     expect(res.headers['set-cookie'][0]).toMatch(new RegExp(`^${AUTH_COOKIE}=`));
-    expect(res.body.user).not.toHaveProperty('password_hash');
+    expect(res.body.user).not.toHaveProperty('passwordHash');
     expect(verifyPassword).toHaveBeenCalledWith('password123', 'hashed-pw');
   });
 
@@ -167,7 +167,7 @@ describe('GET /api/auth/me', () => {
 
     expect(res.status).toBe(200);
     expect(res.body.user).toMatchObject({ id: 1, username: 'amanda' });
-    expect(res.body.user).not.toHaveProperty('password_hash');
+    expect(res.body.user).not.toHaveProperty('passwordHash');
     expect(userModel.findById).toHaveBeenCalledWith(1);
   });
 
