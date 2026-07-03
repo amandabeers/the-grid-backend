@@ -58,7 +58,13 @@ module.exports = {
     useNullAsDefault: true,
     pool: {
       min: 0,
-      max: 10
+      max: 10,
+      afterCreate: (conn, done) => {
+        conn.pragma('journal_mode = WAL');
+        conn.pragma('foreign_keys = ON');
+        console.log('Connection established', process.env.DEV_DATABASE);
+        done();
+      }
     },
     migrations: {
       directory: __dirname + '/database/migrations',
@@ -71,8 +77,6 @@ module.exports = {
     connection: process.env.DATABASE_URL,
     useNullAsDefault: true,
     pool: {
-      min: 0,
-      max: 10,
       afterCreate: (conn, done) => {
         conn.pragma('journal_mode = WAL');
         conn.pragma('foreign_keys = ON');
