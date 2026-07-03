@@ -124,7 +124,7 @@ exports.seed = async function(knex) {
   if (fs.existsSync(schedulePath)) {
     try {
       scheduleData = JSON.parse(fs.readFileSync(schedulePath, 'utf8'));
-    } catch (e) {
+    } catch {
       scheduleData = [];
     }
   }

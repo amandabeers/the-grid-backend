@@ -227,6 +227,7 @@ Rather than a separate mutable table, a Grid is best modeled as a **derived view
 | POST | `/api/auth/login` | Log in | public |
 | POST | `/api/auth/logout` | Log out | member |
 | GET | `/api/seasons/:year` | Season metadata, lock time, status | member |
+| GET | `/api/teams` | List all NFL teams (with division/conference) | member |
 | POST | `/api/admin/seasons/:year/import-schedule` | Pull full schedule from ESPN, populate `games`/`teams` | admin |
 | POST | `/api/admin/seasons/:year/refresh-scores` | Pull latest scores, update results, recompute correctness | admin |
 | GET | `/api/seasons/:year/games` | List all games for the season | member |
