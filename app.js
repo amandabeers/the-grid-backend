@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const knex = require('./database/connection.js');
 
 const authRoutes = require('./api/routes/authRoutes.js');
+const seasonRoutes = require('./api/routes/seasonRoutes.js');
+const teamRoutes = require('./api/routes/teamRoutes.js');
 const errorHandler = require('./middleware/errorHandler.js');
 
 const app = express();
@@ -36,6 +38,8 @@ app.get('/conferences', async (req, res) => {
 
 // routes
 app.use('/api/auth', authRoutes);
+app.use('/api/seasons', seasonRoutes);
+app.use('/api/teams', teamRoutes);
 
 // error handler (must be last)
 app.use(errorHandler);
