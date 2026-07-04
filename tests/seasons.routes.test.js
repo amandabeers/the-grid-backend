@@ -4,21 +4,21 @@ const request = require('supertest');
 jest.mock('../database/connection', () => ({}));
 
 // Mock the data layer so no real database (or better-sqlite3 native) is loaded.
-jest.mock('../api/models/seasonModel', () => ({ findByYear: jest.fn() }));
-jest.mock('../api/models/gameModel', () => ({
+jest.mock('../api/db/seasonDb', () => ({ findByYear: jest.fn() }));
+jest.mock('../api/db/gameDb', () => ({
   listBySeason: jest.fn(),
   findInSeason: jest.fn(),
 }));
-jest.mock('../api/models/pickModel', () => ({
+jest.mock('../api/db/pickDb', () => ({
   listByUserSeason: jest.fn(),
   upsert: jest.fn(),
   replaceAllForUserSeason: jest.fn(),
 }));
 
 const app = require('../app.js');
-const seasonModel = require('../api/models/seasonModel');
-const gameModel = require('../api/models/gameModel');
-const pickModel = require('../api/models/pickModel');
+const seasonDb = require('../api/db/seasonDb');
+const gameDb = require('../api/db/gameDb');
+const pickDb = require('../api/db/pickDb');
 const { signAuthToken, AUTH_COOKIE } = require('../utils/jwt');
 
 const YEAR = 2026;
@@ -41,31 +41,31 @@ const game = (id, overrides = {}) => ({
 
 beforeEach(() => {
   jest.clearAllMocks();
-  seasonModel.findByYear.mockResolvedValue(openSeason);
+  seasonDb.findByYear.mockResolvedValue(openSeason);
 });
 
 describe('auth guard', () => {
   it('returns 401 without a cookie', async () => {
     const res = await request(app).get(`/api/seasons/${YEAR}/games`);
     expect(res.status).toBe(401);
-    expect(seasonModel.findByYear).not.toHaveBeenCalled();
+    expect(seasonDb.findByYear).not.toHaveBeenCalled();
   });
 });
 
 describe('GET /api/seasons/:year/games', () => {
   it('returns the season games', async () => {
     const games = [game(1), game(2)];
-    gameModel.listBySeason.mockResolvedValue(games);
+    gameDb.listBySeason.mockResolvedValue(games);
 
     const res = await request(app).get(`/api/seasons/${YEAR}/games`).set('Cookie', authCookie());
 
     expect(res.status).toBe(200);
     expect(res.body.games).toHaveLength(2);
-    expect(gameModel.listBySeason).toHaveBeenCalledWith(openSeason.id);
+    expect(gameDb.listBySeason).toHaveBeenCalledWith(openSeason.id);
   });
 
   it('returns 404 for an unknown season', async () => {
-    seasonModel.findByYear.mockResolvedValue(undefined);
+    seasonDb.findByYear.mockResolvedValue(undefined);
 
     const res = await request(app).get(`/api/seasons/1999/games`).set('Cookie', authCookie());
 
@@ -75,7 +75,7 @@ describe('GET /api/seasons/:year/games', () => {
 
 describe('GET /api/seasons/:year/picks/me', () => {
   it('returns the requester picks', async () => {
-    pickModel.listByUserSeason.mockResolvedValue([{ id: 5, gameId: 1, pickType: 'tie' }]);
+    pickDb.listByUserSeason.mockResolvedValue([{ id: 5, gameId: 1, pickType: 'tie' }]);
 
     const res = await request(app)
       .get(`/api/seasons/${YEAR}/picks/me`)
@@ -83,15 +83,15 @@ describe('GET /api/seasons/:year/picks/me', () => {
 
     expect(res.status).toBe(200);
     expect(res.body.picks).toHaveLength(1);
-    expect(pickModel.listByUserSeason).toHaveBeenCalledWith(1, openSeason.id);
+    expect(pickDb.listByUserSeason).toHaveBeenCalledWith(1, openSeason.id);
   });
 });
 
 describe('PUT /api/seasons/:year/picks/:gameId', () => {
   it('upserts a teamWin pick pre-lock', async () => {
     const g = game(3);
-    gameModel.findInSeason.mockResolvedValue(g);
-    pickModel.upsert.mockResolvedValue({ id: 9, gameId: g.id, pickType: 'teamWin' });
+    gameDb.findInSeason.mockResolvedValue(g);
+    pickDb.upsert.mockResolvedValue({ id: 9, gameId: g.id, pickType: 'teamWin' });
 
     const res = await request(app)
       .put(`/api/seasons/${YEAR}/picks/${g.id}`)
@@ -99,7 +99,7 @@ describe('PUT /api/seasons/:year/picks/:gameId', () => {
       .send({ pickType: 'teamWin', pickedTeamId: g.homeTeamId });
 
     expect(res.status).toBe(200);
-    expect(pickModel.upsert).toHaveBeenCalledWith({
+    expect(pickDb.upsert).toHaveBeenCalledWith({
       userId: 1,
       gameId: g.id,
       pickedTeamId: g.homeTeamId,
@@ -109,8 +109,8 @@ describe('PUT /api/seasons/:year/picks/:gameId', () => {
 
   it('normalizes a tie pick to pickedTeamId null', async () => {
     const g = game(4);
-    gameModel.findInSeason.mockResolvedValue(g);
-    pickModel.upsert.mockResolvedValue({ id: 10 });
+    gameDb.findInSeason.mockResolvedValue(g);
+    pickDb.upsert.mockResolvedValue({ id: 10 });
 
     const res = await request(app)
       .put(`/api/seasons/${YEAR}/picks/${g.id}`)
@@ -118,15 +118,15 @@ describe('PUT /api/seasons/:year/picks/:gameId', () => {
       .send({ pickType: 'tie', pickedTeamId: g.homeTeamId });
 
     expect(res.status).toBe(200);
-    expect(pickModel.upsert).toHaveBeenCalledWith(
+    expect(pickDb.upsert).toHaveBeenCalledWith(
       expect.objectContaining({ pickType: 'tie', pickedTeamId: null }),
     );
   });
 
   it('accepts a tie pick with an explicit pickedTeamId of null', async () => {
     const g = game(4);
-    gameModel.findInSeason.mockResolvedValue(g);
-    pickModel.upsert.mockResolvedValue({ id: 11 });
+    gameDb.findInSeason.mockResolvedValue(g);
+    pickDb.upsert.mockResolvedValue({ id: 11 });
 
     const res = await request(app)
       .put(`/api/seasons/${YEAR}/picks/${g.id}`)
@@ -134,13 +134,13 @@ describe('PUT /api/seasons/:year/picks/:gameId', () => {
       .send({ pickType: 'tie', pickedTeamId: null });
 
     expect(res.status).toBe(200);
-    expect(pickModel.upsert).toHaveBeenCalledWith(
+    expect(pickDb.upsert).toHaveBeenCalledWith(
       expect.objectContaining({ pickType: 'tie', pickedTeamId: null }),
     );
   });
 
   it('returns 423 after lock', async () => {
-    seasonModel.findByYear.mockResolvedValue(lockedSeason);
+    seasonDb.findByYear.mockResolvedValue(lockedSeason);
 
     const res = await request(app)
       .put(`/api/seasons/${YEAR}/picks/3`)
@@ -148,12 +148,12 @@ describe('PUT /api/seasons/:year/picks/:gameId', () => {
       .send({ pickType: 'teamWin', pickedTeamId: 30 });
 
     expect(res.status).toBe(423);
-    expect(gameModel.findInSeason).not.toHaveBeenCalled();
+    expect(gameDb.findInSeason).not.toHaveBeenCalled();
   });
 
   it('returns 400 for a team not in the game', async () => {
     const g = game(3);
-    gameModel.findInSeason.mockResolvedValue(g);
+    gameDb.findInSeason.mockResolvedValue(g);
 
     const res = await request(app)
       .put(`/api/seasons/${YEAR}/picks/${g.id}`)
@@ -161,7 +161,7 @@ describe('PUT /api/seasons/:year/picks/:gameId', () => {
       .send({ pickType: 'teamWin', pickedTeamId: 99999 });
 
     expect(res.status).toBe(400);
-    expect(pickModel.upsert).not.toHaveBeenCalled();
+    expect(pickDb.upsert).not.toHaveBeenCalled();
   });
 
   it('returns 400 when teamWin omits pickedTeamId', async () => {
@@ -174,7 +174,7 @@ describe('PUT /api/seasons/:year/picks/:gameId', () => {
   });
 
   it('returns 404 for a game not in the season', async () => {
-    gameModel.findInSeason.mockResolvedValue(undefined);
+    gameDb.findInSeason.mockResolvedValue(undefined);
 
     const res = await request(app)
       .put(`/api/seasons/${YEAR}/picks/12345`)
@@ -188,16 +188,16 @@ describe('PUT /api/seasons/:year/picks/:gameId', () => {
 describe('POST /api/seasons/:year/picks/randomize', () => {
   it('overwrites all picks with exactly one tie', async () => {
     const games = [game(1), game(2), game(3), game(4)];
-    gameModel.listBySeason.mockResolvedValue(games);
-    pickModel.replaceAllForUserSeason.mockResolvedValue();
-    pickModel.listByUserSeason.mockResolvedValue([]);
+    gameDb.listBySeason.mockResolvedValue(games);
+    pickDb.replaceAllForUserSeason.mockResolvedValue();
+    pickDb.listByUserSeason.mockResolvedValue([]);
 
     const res = await request(app)
       .post(`/api/seasons/${YEAR}/picks/randomize`)
       .set('Cookie', authCookie());
 
     expect(res.status).toBe(200);
-    const [userId, gameIds, rows] = pickModel.replaceAllForUserSeason.mock.calls[0];
+    const [userId, gameIds, rows] = pickDb.replaceAllForUserSeason.mock.calls[0];
     expect(userId).toBe(1);
     expect(gameIds).toEqual(games.map((g) => g.id));
     expect(rows).toHaveLength(games.length);
@@ -211,33 +211,33 @@ describe('POST /api/seasons/:year/picks/randomize', () => {
   });
 
   it('returns 422 when the season has no games', async () => {
-    gameModel.listBySeason.mockResolvedValue([]);
+    gameDb.listBySeason.mockResolvedValue([]);
 
     const res = await request(app)
       .post(`/api/seasons/${YEAR}/picks/randomize`)
       .set('Cookie', authCookie());
 
     expect(res.status).toBe(422);
-    expect(pickModel.replaceAllForUserSeason).not.toHaveBeenCalled();
+    expect(pickDb.replaceAllForUserSeason).not.toHaveBeenCalled();
   });
 
   it('returns 423 after lock', async () => {
-    seasonModel.findByYear.mockResolvedValue(lockedSeason);
+    seasonDb.findByYear.mockResolvedValue(lockedSeason);
 
     const res = await request(app)
       .post(`/api/seasons/${YEAR}/picks/randomize`)
       .set('Cookie', authCookie());
 
     expect(res.status).toBe(423);
-    expect(gameModel.listBySeason).not.toHaveBeenCalled();
+    expect(gameDb.listBySeason).not.toHaveBeenCalled();
   });
 });
 
 describe('POST /api/seasons/:year/grid/submit', () => {
   it('returns 200 for a complete grid', async () => {
     const games = [game(1), game(2)];
-    gameModel.listBySeason.mockResolvedValue(games);
-    pickModel.listByUserSeason.mockResolvedValue([
+    gameDb.listBySeason.mockResolvedValue(games);
+    pickDb.listByUserSeason.mockResolvedValue([
       { gameId: 1, pickType: 'teamWin' },
       { gameId: 2, pickType: 'tie' },
     ]);
@@ -252,8 +252,8 @@ describe('POST /api/seasons/:year/grid/submit', () => {
 
   it('returns 422 with reasons when picks are missing and no tie', async () => {
     const games = [game(1), game(2), game(3)];
-    gameModel.listBySeason.mockResolvedValue(games);
-    pickModel.listByUserSeason.mockResolvedValue([{ gameId: 1, pickType: 'teamWin' }]);
+    gameDb.listBySeason.mockResolvedValue(games);
+    pickDb.listByUserSeason.mockResolvedValue([{ gameId: 1, pickType: 'teamWin' }]);
 
     const res = await request(app)
       .post(`/api/seasons/${YEAR}/grid/submit`)

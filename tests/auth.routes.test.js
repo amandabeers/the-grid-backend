@@ -4,7 +4,7 @@ const request = require('supertest');
 jest.mock('../database/connection', () => ({}));
 
 // Mock the DB layer so no real database (or better-sqlite3 native) is loaded.
-jest.mock('../api/models/userModel', () => ({
+jest.mock('../api/db/userDb', () => ({
   findByEmail: jest.fn(),
   findByUsername: jest.fn(),
   findById: jest.fn(),
@@ -24,7 +24,7 @@ jest.mock('../utils/password', () => ({
 }));
 
 const app = require('../app.js');
-const userModel = require('../api/models/userModel');
+const userDb = require('../api/db/userDb');
 const { hashPassword, verifyPassword } = require('../utils/password');
 const { signAuthToken, AUTH_COOKIE } = require('../utils/jwt');
 
@@ -49,9 +49,9 @@ describe('POST /api/auth/register', () => {
   const validBody = { email: 'a@b.com', username: 'amanda', password: 'password123' };
 
   it('creates the user, sets an auth cookie, and returns the public user', async () => {
-    userModel.findByEmail.mockResolvedValue(undefined);
-    userModel.findByUsername.mockResolvedValue(undefined);
-    userModel.create.mockResolvedValue(sampleUser);
+    userDb.findByEmail.mockResolvedValue(undefined);
+    userDb.findByUsername.mockResolvedValue(undefined);
+    userDb.create.mockResolvedValue(sampleUser);
 
     const res = await request(app).post('/api/auth/register').send(validBody);
 
@@ -61,7 +61,7 @@ describe('POST /api/auth/register', () => {
     expect(res.body.user).toMatchObject({ id: 1, email: 'a@b.com', role: 'member' });
     expect(res.body.user).not.toHaveProperty('passwordHash');
     expect(hashPassword).toHaveBeenCalledWith('password123');
-    expect(userModel.create).toHaveBeenCalledWith({
+    expect(userDb.create).toHaveBeenCalledWith({
       email: 'a@b.com',
       username: 'amanda',
       passwordHash: 'hashed-pw',
@@ -69,22 +69,22 @@ describe('POST /api/auth/register', () => {
   });
 
   it('returns 409 when the email is already in use', async () => {
-    userModel.findByEmail.mockResolvedValue(sampleUser);
+    userDb.findByEmail.mockResolvedValue(sampleUser);
 
     const res = await request(app).post('/api/auth/register').send(validBody);
 
     expect(res.status).toBe(409);
-    expect(userModel.create).not.toHaveBeenCalled();
+    expect(userDb.create).not.toHaveBeenCalled();
   });
 
   it('returns 409 when the username is already taken', async () => {
-    userModel.findByEmail.mockResolvedValue(undefined);
-    userModel.findByUsername.mockResolvedValue(sampleUser);
+    userDb.findByEmail.mockResolvedValue(undefined);
+    userDb.findByUsername.mockResolvedValue(sampleUser);
 
     const res = await request(app).post('/api/auth/register').send(validBody);
 
     expect(res.status).toBe(409);
-    expect(userModel.create).not.toHaveBeenCalled();
+    expect(userDb.create).not.toHaveBeenCalled();
   });
 
   it('returns 400 on an invalid body and never hashes', async () => {
@@ -103,7 +103,7 @@ describe('POST /api/auth/login', () => {
   const validBody = { email: 'a@b.com', password: 'password123' };
 
   it('sets a cookie and returns the public user on valid credentials', async () => {
-    userModel.findByEmail.mockResolvedValue(sampleUser);
+    userDb.findByEmail.mockResolvedValue(sampleUser);
     verifyPassword.mockResolvedValue(true);
 
     const res = await request(app).post('/api/auth/login').send(validBody);
@@ -115,7 +115,7 @@ describe('POST /api/auth/login', () => {
   });
 
   it('returns 401 on a wrong password', async () => {
-    userModel.findByEmail.mockResolvedValue(sampleUser);
+    userDb.findByEmail.mockResolvedValue(sampleUser);
     verifyPassword.mockResolvedValue(false);
 
     const res = await request(app).post('/api/auth/login').send(validBody);
@@ -125,7 +125,7 @@ describe('POST /api/auth/login', () => {
   });
 
   it('returns 401 for an unknown email without checking the password', async () => {
-    userModel.findByEmail.mockResolvedValue(undefined);
+    userDb.findByEmail.mockResolvedValue(undefined);
 
     const res = await request(app).post('/api/auth/login').send(validBody);
 
@@ -161,14 +161,14 @@ describe('POST /api/auth/logout', () => {
 
 describe('GET /api/auth/me', () => {
   it('returns the current user for a valid session', async () => {
-    userModel.findById.mockResolvedValue(sampleUser);
+    userDb.findById.mockResolvedValue(sampleUser);
 
     const res = await request(app).get('/api/auth/me').set('Cookie', authCookie());
 
     expect(res.status).toBe(200);
     expect(res.body.user).toMatchObject({ id: 1, username: 'amanda' });
     expect(res.body.user).not.toHaveProperty('passwordHash');
-    expect(userModel.findById).toHaveBeenCalledWith(1);
+    expect(userDb.findById).toHaveBeenCalledWith(1);
   });
 
   it('returns 401 without a cookie', async () => {
@@ -185,7 +185,7 @@ describe('GET /api/auth/me', () => {
   });
 
   it('returns 401 when the token is valid but the user no longer exists', async () => {
-    userModel.findById.mockResolvedValue(undefined);
+    userDb.findById.mockResolvedValue(undefined);
 
     const res = await request(app).get('/api/auth/me').set('Cookie', authCookie());
 
