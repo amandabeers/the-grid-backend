@@ -3,7 +3,6 @@ const cors = require('cors');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const knex = require('./database/connection.js');
 
 const authRoutes = require('./api/routes/authRoutes.js');
 const seasonRoutes = require('./api/routes/seasonRoutes.js');
@@ -11,6 +10,10 @@ const teamRoutes = require('./api/routes/teamRoutes.js');
 const errorHandler = require('./middleware/errorHandler.js');
 
 const app = express();
+
+// Trust one proxy hop so express-rate-limit (and req.ip) key on the real client
+// IP rather than the reverse proxy's. Adjust the hop count to match deployment.
+app.set('trust proxy', 1);
 
 // middleware
 app.use(helmet());
@@ -27,13 +30,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 
+// Liveness/health check.
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
-
-app.get('/conferences', async (req, res) => {
-  const conferences = await knex('conferences');
-  res.json(conferences);
+  res.json({ status: 'ok' });
 });
 
 // routes

@@ -25,59 +25,59 @@ exports.seed = async function(knex) {
   const [afcId, nfcId] = insertedConferences.map((row) => row.id);
 
   const divisions = [
-    { name: 'East', conference_id: afcId },
-    { name: 'North', conference_id: afcId },
-    { name: 'South', conference_id: afcId },
-    { name: 'West', conference_id: afcId },
-    { name: 'East', conference_id: nfcId },
-    { name: 'North', conference_id: nfcId },
-    { name: 'South', conference_id: nfcId },
-    { name: 'West', conference_id: nfcId }
+    { name: 'East', conferenceId: afcId },
+    { name: 'North', conferenceId: afcId },
+    { name: 'South', conferenceId: afcId },
+    { name: 'West', conferenceId: afcId },
+    { name: 'East', conferenceId: nfcId },
+    { name: 'North', conferenceId: nfcId },
+    { name: 'South', conferenceId: nfcId },
+    { name: 'West', conferenceId: nfcId }
   ];
 
   const insertedDivisions = await knex('divisions')
     .insert(divisions)
-    .returning(['id', 'name', 'conference_id']);
+    .returning(['id', 'name', 'conferenceId']);
 
   const divisionMap = insertedDivisions.reduce((map, division) => {
-    const key = `${division.conference_id}-${division.name}`;
+    const key = `${division.conferenceId}-${division.name}`;
     map[key] = division.id;
     return map;
   }, {});
 
   const teams = [
-    { name: 'Bills', location: 'Buffalo', abbreviation: 'BUF', division_id: divisionMap[`${afcId}-East`] },
-    { name: 'Dolphins', location: 'Miami', abbreviation: 'MIA', division_id: divisionMap[`${afcId}-East`] },
-    { name: 'Patriots', location: 'New England', abbreviation: 'NE', division_id: divisionMap[`${afcId}-East`] },
-    { name: 'Jets', location: 'New York', abbreviation: 'NYJ', division_id: divisionMap[`${afcId}-East`] },
-    { name: 'Ravens', location: 'Baltimore', abbreviation: 'BAL', division_id: divisionMap[`${afcId}-North`] },
-    { name: 'Bengals', location: 'Cincinnati', abbreviation: 'CIN', division_id: divisionMap[`${afcId}-North`] },
-    { name: 'Browns', location: 'Cleveland', abbreviation: 'CLE', division_id: divisionMap[`${afcId}-North`] },
-    { name: 'Steelers', location: 'Pittsburgh', abbreviation: 'PIT', division_id: divisionMap[`${afcId}-North`] },
-    { name: 'Texans', location: 'Houston', abbreviation: 'HOU', division_id: divisionMap[`${afcId}-South`] },
-    { name: 'Colts', location: 'Indianapolis', abbreviation: 'IND', division_id: divisionMap[`${afcId}-South`] },
-    { name: 'Jaguars', location: 'Jacksonville', abbreviation: 'JAX', division_id: divisionMap[`${afcId}-South`] },
-    { name: 'Titans', location: 'Tennessee', abbreviation: 'TEN', division_id: divisionMap[`${afcId}-South`] },
-    { name: 'Broncos', location: 'Denver', abbreviation: 'DEN', division_id: divisionMap[`${afcId}-West`] },
-    { name: 'Chiefs', location: 'Kansas City', abbreviation: 'KC', division_id: divisionMap[`${afcId}-West`] },
-    { name: 'Raiders', location: 'Las Vegas', abbreviation: 'LV', division_id: divisionMap[`${afcId}-West`] },
-    { name: 'Chargers', location: 'Los Angeles', abbreviation: 'LAC', division_id: divisionMap[`${afcId}-West`] },
-    { name: 'Cowboys', location: 'Dallas', abbreviation: 'DAL', division_id: divisionMap[`${nfcId}-East`] },
-    { name: 'Giants', location: 'New York', abbreviation: 'NYG', division_id: divisionMap[`${nfcId}-East`] },
-    { name: 'Eagles', location: 'Philadelphia', abbreviation: 'PHI', division_id: divisionMap[`${nfcId}-East`] },
-    { name: 'Commanders', location: 'Washington', abbreviation: 'WSH', division_id: divisionMap[`${nfcId}-East`] },
-    { name: 'Bears', location: 'Chicago', abbreviation: 'CHI', division_id: divisionMap[`${nfcId}-North`] },
-    { name: 'Lions', location: 'Detroit', abbreviation: 'DET', division_id: divisionMap[`${nfcId}-North`] },
-    { name: 'Packers', location: 'Green Bay', abbreviation: 'GB', division_id: divisionMap[`${nfcId}-North`] },
-    { name: 'Vikings', location: 'Minnesota', abbreviation: 'MIN', division_id: divisionMap[`${nfcId}-North`] },
-    { name: 'Falcons', location: 'Atlanta', abbreviation: 'ATL', division_id: divisionMap[`${nfcId}-South`] },
-    { name: 'Panthers', location: 'Carolina', abbreviation: 'CAR', division_id: divisionMap[`${nfcId}-South`] },
-    { name: 'Saints', location: 'New Orleans', abbreviation: 'NO', division_id: divisionMap[`${nfcId}-South`] },
-    { name: 'Buccaneers', location: 'Tampa Bay', abbreviation: 'TB', division_id: divisionMap[`${nfcId}-South`] },
-    { name: 'Cardinals', location: 'Arizona', abbreviation: 'ARI', division_id: divisionMap[`${nfcId}-West`] },
-    { name: 'Rams', location: 'Los Angeles', abbreviation: 'LAR', division_id: divisionMap[`${nfcId}-West`] },
-    { name: '49ers', location: 'San Francisco', abbreviation: 'SF', division_id: divisionMap[`${nfcId}-West`] },
-    { name: 'Seahawks', location: 'Seattle', abbreviation: 'SEA', division_id: divisionMap[`${nfcId}-West`] }
+    { name: 'Bills', location: 'Buffalo', abbreviation: 'BUF', divisionId: divisionMap[`${afcId}-East`] },
+    { name: 'Dolphins', location: 'Miami', abbreviation: 'MIA', divisionId: divisionMap[`${afcId}-East`] },
+    { name: 'Patriots', location: 'New England', abbreviation: 'NE', divisionId: divisionMap[`${afcId}-East`] },
+    { name: 'Jets', location: 'New York', abbreviation: 'NYJ', divisionId: divisionMap[`${afcId}-East`] },
+    { name: 'Ravens', location: 'Baltimore', abbreviation: 'BAL', divisionId: divisionMap[`${afcId}-North`] },
+    { name: 'Bengals', location: 'Cincinnati', abbreviation: 'CIN', divisionId: divisionMap[`${afcId}-North`] },
+    { name: 'Browns', location: 'Cleveland', abbreviation: 'CLE', divisionId: divisionMap[`${afcId}-North`] },
+    { name: 'Steelers', location: 'Pittsburgh', abbreviation: 'PIT', divisionId: divisionMap[`${afcId}-North`] },
+    { name: 'Texans', location: 'Houston', abbreviation: 'HOU', divisionId: divisionMap[`${afcId}-South`] },
+    { name: 'Colts', location: 'Indianapolis', abbreviation: 'IND', divisionId: divisionMap[`${afcId}-South`] },
+    { name: 'Jaguars', location: 'Jacksonville', abbreviation: 'JAX', divisionId: divisionMap[`${afcId}-South`] },
+    { name: 'Titans', location: 'Tennessee', abbreviation: 'TEN', divisionId: divisionMap[`${afcId}-South`] },
+    { name: 'Broncos', location: 'Denver', abbreviation: 'DEN', divisionId: divisionMap[`${afcId}-West`] },
+    { name: 'Chiefs', location: 'Kansas City', abbreviation: 'KC', divisionId: divisionMap[`${afcId}-West`] },
+    { name: 'Raiders', location: 'Las Vegas', abbreviation: 'LV', divisionId: divisionMap[`${afcId}-West`] },
+    { name: 'Chargers', location: 'Los Angeles', abbreviation: 'LAC', divisionId: divisionMap[`${afcId}-West`] },
+    { name: 'Cowboys', location: 'Dallas', abbreviation: 'DAL', divisionId: divisionMap[`${nfcId}-East`] },
+    { name: 'Giants', location: 'New York', abbreviation: 'NYG', divisionId: divisionMap[`${nfcId}-East`] },
+    { name: 'Eagles', location: 'Philadelphia', abbreviation: 'PHI', divisionId: divisionMap[`${nfcId}-East`] },
+    { name: 'Commanders', location: 'Washington', abbreviation: 'WSH', divisionId: divisionMap[`${nfcId}-East`] },
+    { name: 'Bears', location: 'Chicago', abbreviation: 'CHI', divisionId: divisionMap[`${nfcId}-North`] },
+    { name: 'Lions', location: 'Detroit', abbreviation: 'DET', divisionId: divisionMap[`${nfcId}-North`] },
+    { name: 'Packers', location: 'Green Bay', abbreviation: 'GB', divisionId: divisionMap[`${nfcId}-North`] },
+    { name: 'Vikings', location: 'Minnesota', abbreviation: 'MIN', divisionId: divisionMap[`${nfcId}-North`] },
+    { name: 'Falcons', location: 'Atlanta', abbreviation: 'ATL', divisionId: divisionMap[`${nfcId}-South`] },
+    { name: 'Panthers', location: 'Carolina', abbreviation: 'CAR', divisionId: divisionMap[`${nfcId}-South`] },
+    { name: 'Saints', location: 'New Orleans', abbreviation: 'NO', divisionId: divisionMap[`${nfcId}-South`] },
+    { name: 'Buccaneers', location: 'Tampa Bay', abbreviation: 'TB', divisionId: divisionMap[`${nfcId}-South`] },
+    { name: 'Cardinals', location: 'Arizona', abbreviation: 'ARI', divisionId: divisionMap[`${nfcId}-West`] },
+    { name: 'Rams', location: 'Los Angeles', abbreviation: 'LAR', divisionId: divisionMap[`${nfcId}-West`] },
+    { name: '49ers', location: 'San Francisco', abbreviation: 'SF', divisionId: divisionMap[`${nfcId}-West`] },
+    { name: 'Seahawks', location: 'Seattle', abbreviation: 'SEA', divisionId: divisionMap[`${nfcId}-West`] }
   ];
 
   const insertedTeams = await knex('teams')
@@ -102,17 +102,17 @@ exports.seed = async function(knex) {
   const seasonId = seasonRow.id;
 
   const weeks = Array.from({ length: 18 }, (_, index) => ({
-    week_number: index + 1,
-    season_id: seasonId,
-    season_type: 2
+    weekNumber: index + 1,
+    seasonId: seasonId,
+    seasonType: 2
   }));
 
   const insertedWeeks = await knex('weeks')
     .insert(weeks)
-    .returning(['id', 'week_number']);
+    .returning(['id', 'weekNumber']);
 
   const weekIds = insertedWeeks.reduce((map, week) => {
-    map[week.week_number] = week.id;
+    map[week.weekNumber] = week.id;
     return map;
   }, {});
 
@@ -131,42 +131,43 @@ exports.seed = async function(knex) {
 
   // Build games directly from the fetched schedule data
   const scheduleGames = [];
+  const kickoffsUTC = [];
   scheduleData.forEach((g) => {
     const weekNumber = g.week;
-    const week_id = weekIds[weekNumber];
-    if (!week_id) return; // skip if week missing
+    const weekId = weekIds[weekNumber];
+    if (!weekId) return; // skip if week missing
 
     const homeAbbr = g.home;
     const awayAbbr = g.away;
-    const home_team_id = teamIds[homeAbbr];
-    const away_team_id = teamIds[awayAbbr];
-    if (!home_team_id || !away_team_id) return; // skip unknown teams
+    const homeTeamId = teamIds[homeAbbr];
+    const awayTeamId = teamIds[awayAbbr];
+    if (!homeTeamId || !awayTeamId) return; // skip unknown teams
 
     const location = g.location || (teamMeta[homeAbbr] ? `${teamMeta[homeAbbr].location} Stadium` : '');
 
+    if (g.startTimeUTC) kickoffsUTC.push(g.startTimeUTC);
+
     scheduleGames.push({
-      season_id: seasonId,
-      week_id,
-      home_team_id,
-      away_team_id,
-      kickoff_at: g.startTimeUTC || null, // canonical UTC kickoff
-      start_time_et: g.startTimeET || null,
+      seasonId: seasonId,
+      weekId,
+      homeTeamId,
+      awayTeamId,
+      startTimeEt: g.startTimeET || null,
       location: location,
       status: 'scheduled',
-      home_score: null,
-      away_score: null,
+      homeScore: null,
+      awayScore: null,
       result: null
     });
   });
 
   await knex('games').insert(scheduleGames);
 
-  // lock_at = kickoff of the first game (SPEC §5.3); picks lock at this instant.
-  const kickoffs = scheduleGames
-    .map((game) => game.kickoff_at)
-    .filter((kickoff) => kickoff);
-  if (kickoffs.length > 0) {
-    const minKickoff = kickoffs.reduce((min, kickoff) => (kickoff < min ? kickoff : min));
-    await knex('seasons').where({ id: seasonId }).update({ lock_at: minKickoff });
+  // lockAt = kickoff of the first game (SPEC §6.1); picks lock at this instant.
+  // Derived from the schedule's canonical UTC kickoff so the lock check compares a
+  // real UTC instant (the games table stores only ET-local startTimeEt for display).
+  if (kickoffsUTC.length > 0) {
+    const minKickoff = kickoffsUTC.reduce((min, kickoff) => (kickoff < min ? kickoff : min));
+    await knex('seasons').where({ id: seasonId }).update({ lockAt: minKickoff });
   }
 };
