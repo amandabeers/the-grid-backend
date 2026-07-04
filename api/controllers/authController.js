@@ -33,9 +33,10 @@ const register = async (req, res) => {
     // The pre-checks above cover the common case; the unique constraint is the
     // authoritative guard against a race between check and insert.
     if (isUniqueViolation(err)) {
-      const field = /username/i.test(err.message) ? 'Username' : 'Email';
-      const message = field === 'Username' ? 'Username already taken' : 'Email already in use';
-      return res.status(409).json({ error: message });
+      const isUsername = /username/i.test(err.message);
+      const message = isUsername ? 'Username already taken' : 'Email already in use';
+      const field = isUsername ? 'username' : 'email';
+      return res.status(409).json({ error: message, field });
     }
     throw err;
   }
